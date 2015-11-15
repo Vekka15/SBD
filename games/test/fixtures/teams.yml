@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: MyString
+  symbol: MyString
+  level: 1
+  player_id: 
+
+two:
+  name: MyString
+  city: MyString
+  symbol: MyString
+  level: 1
+  player_id: 

@@ -1,0 +1,10 @@
+
+<%= link_to("Dodaj",new_team_path) %>
+<%= link_to("Dodaj gracza", new_player_path) %>
+<% @all_team.each do |t| %>
+  <div> Nazwa: <%= t.name %> </div><br>
+    <% @all_player.where(:team_id => t.id).each do |p| %>
+      <div> Nick: <%= p.nickname %> </div>
+    <% end %>
+<% end %>
+<%= debug(params) %>

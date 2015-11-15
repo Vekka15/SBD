@@ -1,0 +1,7 @@
+
+<%= link_to("Nowa gra",new_game_path) %>
+
+<% @all_games.each do |f| %>
+  <div> Nazwa: <%= f.name %> </div>
+  <div> Ocena: <%= f.rate %> </div>
+<%end%>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 
+  seats_number: 1
+  price: 
+  game_id: 
+  convention_id: 
+
+two:
+  time: 
+  seats_number: 1
+  price: 
+  game_id: 
+  convention_id: 

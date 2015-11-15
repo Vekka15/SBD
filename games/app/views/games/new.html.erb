@@ -1,0 +1,14 @@
+
+<%= form_for @new_game do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :number_players %>
+  <%= f.text_field :number_players %>
+
+  <%= f.label :rate %>
+  <%= f.text_field :rate %>
+
+  <%= f.submit %>
+
+<%end%>
