@@ -14,6 +14,10 @@ class TeamsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    Team.delete(params[:id])
+  end
+
   def team_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
     params.require(:team).permit(:name,:city,:symbol,:level)
   end

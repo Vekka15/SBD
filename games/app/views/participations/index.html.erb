@@ -1,0 +1,12 @@
+
+<div><%= link_to("Uczestnicz w meczu", new_player_participation_path(@player) )%> </div> <br>
+<% @all_participation.each do |p| %>
+  <% if @player.id == p.player_id %>
+  <div> Gracz: <%= Player.find(p.player_id).nickname %> </div>
+  <div> Id gry: <%= p.match_id %> </div>
+  <div> Utworzenie: <%= p.created_at %> </div>
+  <div> <%=link_to("Usuń", player_participation_path(@player,p), method: :delete) %> </div>
+  <div> <%=  Participation.count(p.match_id) %> </div>
+  <div> ============================== </div>
+  <%end%>
+  <%end%>

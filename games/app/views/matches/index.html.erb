@@ -6,4 +6,6 @@
   <div> Nagroda: <%= m.price %> </div> <br>
   <div> Gra: <%= Game.find(m.game_id).name %> </div> <br>
   <div> Zjazd: <%= Convention.find(m.convention_id).name %> </div> <br>
+  <div> <%=link_to("Usuń", match_path(m), method: :delete) %> </div>
+  <div> ================================= </div>
 <%end%>
