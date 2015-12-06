@@ -1,0 +1,19 @@
+<%= form_for @convention do |c| %>
+  <%= c.label "Nazwa" %>
+  <%= c.text_field :name %>
+  <br>
+  <%= c.label "Start" %>
+  <%= c.text_field :start %>
+  <br>
+  <%= c.label "Koniec" %>
+  <%=c.text_field :end %>
+  <br>
+  <%= c.label "Kraj" %>
+  <%= c.text_field :country %>
+  <br>
+  <%= c.label "Poziom" %>
+  <%= c.text_field :level %>
+  <br>
+  <%= c.submit %>
+
+<%end%>

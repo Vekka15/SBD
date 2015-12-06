@@ -22,7 +22,7 @@ default: &default
   pool: 5
   host: localhost
   username: vekka
-  password: G1607ka9ka
+  password: prosiak098
 
 development:
   <<: *default

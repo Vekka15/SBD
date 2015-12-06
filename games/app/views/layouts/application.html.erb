@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%=link_to("Gracze",players_path) %>
+<%=link_to("Drużyny",teams_path) %>
+<%=link_to("Zjazdy",conventions_path) %>
+<%=link_to("Gry",games_path) %>
+<%=link_to("Rozgrywki",matches_path) %>
+<br>
 <%= yield %>
 
 </body>
