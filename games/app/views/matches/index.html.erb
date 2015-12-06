@@ -1,0 +1,9 @@
+
+<%= link_to("Nowy mecz", new_match_path) %>
+<% @all_matches.each do |m| %>
+  <div> Czas: <%= m.time %> </div> <br>
+  <div> Liczba miejsc: <%= m.seats_number %> </div> <br>
+  <div> Nagroda: <%= m.price %> </div> <br>
+  <div> Gra: <%= Game.find(m.game_id).name %> </div> <br>
+  <div> Zjazd: <%= Convention.find(m.convention_id).name %> </div> <br>
+<%end%>

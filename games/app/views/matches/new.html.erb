@@ -1,0 +1,20 @@
+<%= form_for @match do |m| %>
+  <%= m.label "Czas" %>
+  <%= m.text_field :time %>
+<br>
+  <%= m.label "Liczba miejsc" %>
+  <%= m.text_field :seats_number %>
+<br>
+  <%= m.label "Nagroda" %>
+  <%= m.text_field :price %>
+<br>
+  <%= m.label "Nazwa gry" %>
+  <%= m.text_field :game_name %>
+<br>
+  <%= m.label "Nazwa zjazdu" %>
+  <%= m.text_field :convention_name %>
+<br>
+
+  <%= m.submit %>
+
+<%end%>

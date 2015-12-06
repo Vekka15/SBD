@@ -1,10 +1,9 @@
 
-<%= link_to("Dodaj",new_team_path) %>
-<%= link_to("Dodaj gracza", new_player_path) %>
+<%= link_to("Dodaj druzyne",new_team_path) %>
 <% @all_team.each do |t| %>
   <div> Nazwa: <%= t.name %> </div><br>
-    <% @all_player.where(:team_id => t.id).each do |p| %>
-      <div> Nick: <%= p.nickname %> </div>
-    <% end %>
+  <div> Miasto: <%= t.city %> </div> <br>
+  <div> Symbol: <%= t.symbol %> </div> <br>
+  <div> Poziom: <%= t.level %> </div> <br>
 <% end %>
 <%= debug(params) %>

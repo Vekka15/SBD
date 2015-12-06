@@ -1,0 +1,9 @@
+<%= form_for [@player,@new_participation] do |p| %>
+  <%= p.label "Wybierz gre:" %>
+  <%= p.text_field :match_id %>
+
+  <%= p.submit %>
+
+
+<%end%>
+  <%= debug(params) %>

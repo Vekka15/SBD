@@ -1,0 +1,11 @@
+
+<%= link_to("Nowy gracz", new_player_path) %>
+<% @all_player.each do |p| %>
+  <div>Nick:<%= p.nickname %> </div> <br>
+  <div> Imię: <%=p.name %> </div> <br>
+  <div> Nazwisko: <%=p.surname %> </div> <br>
+  <div> Wiek: <%= p.age %> </div> <br>
+  <div> Drużyna: <%= Team.find(p.team_id).name %> </div> <br>
+  <div><%= link_to("Uczestnicz w meczu", new_player_participation_path(p) )%> </div> <br>
+  <div> ========================== </div> <br>
+<%end%>

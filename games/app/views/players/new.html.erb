@@ -1,19 +1,19 @@
 <%= form_for @new_player do |f|%>
-  <%= f.label :nickname %>
+  <%= f.label "Nick:" %>
   <%= f.text_field :nickname %>
-
-  <%= f.label :name %>
+<br>
+  <%= f.label "Imię:" %>
   <%= f.text_field :name %>
-
-  <%= f.label :surname %>
+<br>
+  <%= f.label "Nazwisko:" %>
   <%= f.text_field :surname %>
-
-  <%= f.label :age %>
+<br>
+  <%= f.label "Wiek:" %>
   <%= f.text_field :age %>
-
-  <%= f.label :team_name %>
+<br>
+  <%= f.label "Nazwa drużyny:" %>
   <%= f.text_field :team_name %>
-
+<br>
 
   <%= f.submit %>
 
