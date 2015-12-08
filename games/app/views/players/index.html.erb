@@ -1,4 +1,4 @@
-
+<body class="player">
 <%= link_to("Nowy gracz", new_player_path) %>
 <% @all_player.each do |p| %>
   <div>Nick:<%= p.nickname %> </div> <br>
@@ -9,3 +9,4 @@
   <%=link_to("Uczestnictwa",player_participations_path(p)) %>
   <div> ========================== </div> <br>
 <%end%>
+</body>

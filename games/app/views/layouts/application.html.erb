@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%=link_to("Gracze",players_path) %>
-<%=link_to("Drużyny",teams_path) %>
-<%=link_to("Zjazdy",conventions_path) %>
-<%=link_to("Gry",games_path) %>
-<%=link_to("Rozgrywki",matches_path) %>
+  <ul class="pasek">
+<li><%=link_to("Gracze",players_path,id: "menu",class: "player") %></li>
+<li><%=link_to("Drużyny",teams_path,id: "menu",class: "teams") %></li>
+<li><%=link_to("Zjazdy",conventions_path,id: "menu",class: "conventions") %></li>
+<li><%=link_to("Gry",games_path,id: "menu",class: "games") %></li>
+<li><%=link_to("Rozgrywki",matches_path,id: "menu",class: "matches") %></li>
+</ul>
 <br>
 <%= yield %>
 

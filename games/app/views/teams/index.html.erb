@@ -1,11 +1,12 @@
-
+<body class="teams">
 <%= link_to("Dodaj druzyne",new_team_path) %>
 <% @all_team.each do |t| %>
   <div> Nazwa: <%= t.name %> </div><br>
   <div> Miasto: <%= t.city %> </div> <br>
   <div> Symbol: <%= t.symbol %> </div> <br>
   <div> Poziom: <%= t.level %> </div> <br>
-  
+
   <div> ======================= </div>
 <% end %>
 <%= debug(params) %>
+</body>

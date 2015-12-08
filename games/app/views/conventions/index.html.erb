@@ -1,4 +1,5 @@
 <!-- TO-DO TABELKE -->
+<body class="conventions">
 <%= link_to("Dodaj nowy", new_convention_path) %>
 <% @all_conventions.each do |c| %>
   <div> Id.: <%=c.id %> </div> <br>
@@ -9,3 +10,4 @@
   <div> Poziom: <%= c.level %> </div> <br>
   <div> ============================ </div <br>
 <%end%>
+</body>

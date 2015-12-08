@@ -1,4 +1,4 @@
-
+<body class="participations"
 <div><%= link_to("Uczestnicz w meczu", new_player_participation_path(@player) )%> </div> <br>
 <% @all_participation.each do |p| %>
   <% if @player.id == p.player_id %>
@@ -10,3 +10,4 @@
   <div> ============================== </div>
   <%end%>
   <%end%>
+</body>

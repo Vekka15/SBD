@@ -1,4 +1,4 @@
-
+<body class="matches">
 <%= link_to("Nowy mecz", new_match_path) %>
 <% @all_matches.each do |m| %>
   <div> Czas: <%= m.time %> </div> <br>
@@ -9,3 +9,4 @@
   <div> <%=link_to("Usuń", match_path(m), method: :delete) %> </div>
   <div> ================================= </div>
 <%end%>
+</body>
