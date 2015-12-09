@@ -1,12 +1,24 @@
 <body class="matches">
 <%= link_to("Nowy mecz", new_match_path) %>
+<table>
+  <tr>
+    <th> Id </th>
+    <th> Czas </th>
+    <th> Liczba miejsc </th>
+    <th> Nagroda </th>
+    <th> Nazwa gry </th>
+    <th> Nazwa zjazdu </th>
+  </tr>
 <% @all_matches.each do |m| %>
-  <div> Czas: <%= m.time %> </div> <br>
-  <div> Liczba miejsc: <%= m.seats_number %> </div> <br>
-  <div> Nagroda: <%= m.price %> </div> <br>
-  <div> Gra: <%= Game.find(m.game_id).name %> </div> <br>
-  <div> Zjazd: <%= Convention.find(m.convention_id).name %> </div> <br>
-  <div> <%=link_to("Usuń", match_path(m), method: :delete) %> </div>
-  <div> ================================= </div>
+<tr>
+  <td> <%= m.id %> </td>
+  <td> <%= m.time %> </td> <br>
+  <td> <%= m.seats_number %> </td><br>
+  <td> <%= m.price %> </td> <br>
+  <td> <%= Game.find(m.game_id).name %> </td> <br>
+  <td><%= Convention.find(m.convention_id).name %> </td> <br>
+  <td> <%=link_to("Usuń", match_path(m), method: :delete) %> </td>
+</tr>
 <%end%>
+</table>
 </body>

@@ -1,13 +1,24 @@
 <!-- TO-DO TABELKE -->
 <body class="conventions">
 <%= link_to("Dodaj nowy", new_convention_path) %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nazwa</th>
+    <th>Start</th>
+    <th>Koniec</th>
+    <th>Kraj</th>
+    <th>Poziom</th>
+  </tr>
 <% @all_conventions.each do |c| %>
-  <div> Id.: <%=c.id %> </div> <br>
-  <div> Nazwa: <%= c.name %> </div> <br>
-  <div> Start: <%= c.start %> </div> <br>
-  <div> Koniec: <%=c.end %> </div> <br>
-  <div> Kraj: <%= c.country %> </div> <br>
-  <div> Poziom: <%= c.level %> </div> <br>
-  <div> ============================ </div <br>
+<tr>
+  <td> <%=c.id %> </td> <br>
+  <td> <%= c.name %> </td> <br>
+  <td><%= c.start %> </td> <br>
+  <td><%=c.end %> </td> <br>
+  <td><%= c.country %> </td> <br>
+  <td> Poziom: <%= c.level %> </td> <br>
+</tr>
 <%end%>
+</table>
 </body>

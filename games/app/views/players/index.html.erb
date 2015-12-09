@@ -1,12 +1,24 @@
 <body class="player">
 <%= link_to("Nowy gracz", new_player_path) %>
+<table>
+  <tr>
+    <th> Id </th>
+    <th> Nickname </th>
+    <th> Imię </th>
+    <th> Nazwisko </th>
+    <th> Wiek </th>
+    <th> Nazwa drużyny </th>
+  </tr>
 <% @all_player.each do |p| %>
-  <div>Nick:<%= p.nickname %> </div> <br>
-  <div> Imię: <%=p.name %> </div> <br>
-  <div> Nazwisko: <%=p.surname %> </div> <br>
-  <div> Wiek: <%= p.age %> </div> <br>
-  <div> Drużyna: <%= Team.find(p.team_id).name %> </div> <br>
-  <%=link_to("Uczestnictwa",player_participations_path(p)) %>
-  <div> ========================== </div> <br>
+<tr>
+  <td> <%= p.id %> </td>
+  <td><%= p.nickname %> </td> <br>
+  <td> <%=p.name %> </td> <br>
+  <td> <%=p.surname %> </td> <br>
+  <td> <%= p.age %> </td> <br>
+  <td><%= Team.find(p.team_id).name %> </td> <br>
+  <td><%=link_to("Uczestnictwa",player_participations_path(p)) %></td>
+</tr>
 <%end%>
+</table>
 </body>

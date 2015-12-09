@@ -1,13 +1,21 @@
 <body class="participations"
 <div><%= link_to("Uczestnicz w meczu", new_player_participation_path(@player) )%> </div> <br>
+<table>
+  <tr>
+    <th> Id </th>
+    <th> Nazwa gracza </th>
+    <th> Id rozgrywki </th>
+    <th> Data utowrzenia </th>
+  </tr>
 <% @all_participation.each do |p| %>
   <% if @player.id == p.player_id %>
-  <div> Gracz: <%= Player.find(p.player_id).nickname %> </div>
-  <div> Id gry: <%= p.match_id %> </div>
-  <div> Utworzenie: <%= p.created_at %> </div>
-  <div> <%=link_to("Usuń", player_participation_path(@player,p), method: :delete) %> </div>
-  <div> <%=  Participation.count(p.match_id) %> </div>
-  <div> ============================== </div>
+  <td> <%= p.id %> </td>
+  <td> <%= Player.find(p.player_id).nickname %> </td>
+  <td> Id gry: <%= p.match_id %> </td>
+  <td> Utworzenie: <%= p.created_at %> </td>
+  <td> <%=link_to("Usuń", player_participation_path(@player,p), method: :delete) %> </td>
   <%end%>
+</tr>
   <%end%>
+</table>
 </body>
