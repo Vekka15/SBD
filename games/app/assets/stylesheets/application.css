@@ -1,31 +1,79 @@
+body{
+  background-color: white;
+}
+
+/* PANEL BOCZNY */
+
+a#side-link{
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  padding: 11px;
+}
+
+a:hover#side-link{
+  background-color: #36454f;
+}
+
+
+div.text{
+  margin-left: 400px;
+}
+
+ul.side-menu{
+  padding: 0;
+  margin: 0;
+  width: 250px;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  list-style-type: none;
+  background-color: #4f5b66;
+}
+
+/*MENU NA PASKU */
+/* STYL tekstu */
 a#menu{
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  padding: 10px;
+  padding: 11px;
 }
-
+/* wyswietlanie w lini poziomej*/
 li{
   display: inline;
 }
-
+/*wygląd po najechaniu */
 a:hover#menu{
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #111;
+  background-color: #343d46;
 }
-
+/*zaznaczanie tego elementu na ktorym się znajdujemy */
 body.games a.games:link,
 body.player a.player:link,
 body.conventions a.conventions:link,
 body.teams a.teams:link,
 body.matches a.matches:link {
 	color: white ;
-	background-color: green;
+	background-color: #d62d20;
 }
-
+/*pasek z listą elementów menu */
 ul.pasek{
   padding: 10px;
   list-style-type: none;
-  background-color: grey;
+  background-color: #4f5b66;
+}
+
+/*TABLICE */
+
+table, tr, td,th{
+  border-style: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+}
+
+tr,td, th{
+  padding: 15px;
 }
