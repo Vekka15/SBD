@@ -11,13 +11,15 @@
   </tr>
 <% @all_matches.each do |m| %>
 <tr>
-  <td> <%= m.id %> </td>
-  <td> <%= m.time %> </td> <br>
-  <td> <%= m.seats_number %> </td><br>
-  <td> <%= m.price %> </td> <br>
+  <td> <%= @indeks %> </td>
+  <% @indeks=@indeks+1 %>
+  <td> <%= m.time %> </td>
+  <td> <%= m.seats_number %> </td>
+  <td> <%= m.price %> </td>
   <td> <%= Game.find(m.game_id).name %> </td> <br>
   <td><%= Convention.find(m.convention_id).name %> </td> <br>
   <td> <%=link_to("Usuń", match_path(m), method: :delete) %> </td>
+  <td> <%=link_to("Wyświetl", match_path(m)) %> </td>
 </tr>
 <%end%>
 </table>

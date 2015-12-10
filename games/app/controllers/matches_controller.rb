@@ -1,6 +1,12 @@
 class MatchesController < ApplicationController
+
+  def show
+    @match = Match.find(params[:id])
+  end
+
   def index
     @all_matches = Match.all
+    @indeks = 0
   end
 
   def new
@@ -18,6 +24,7 @@ class MatchesController < ApplicationController
 
   def destroy
     Match.delete(params[:id])
+    rediredt_to matches_path
   end
 
   def match_params

@@ -1,4 +1,9 @@
 class PlayersController < ApplicationController
+
+  def show
+    @player = Player.find(params[:id])
+  end
+
   def index
     @all_player = Player.all
   end
@@ -13,6 +18,11 @@ class PlayersController < ApplicationController
     new_player.team_id=team.id
     new_player.save
     redirect_to root_path
+  end
+
+  def destroy
+    Player.delete(params[:id])
+    redirect_to players_path
   end
 
   def player_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

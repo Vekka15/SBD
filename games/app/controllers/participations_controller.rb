@@ -1,5 +1,9 @@
 class ParticipationsController < ApplicationController
 
+  def show
+    @participation = Participation.find(params[:id])
+  end
+
   def index
     @all_participation = Participation.all
     @player= Player.find(params[:player_id])

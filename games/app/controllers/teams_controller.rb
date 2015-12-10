@@ -1,4 +1,9 @@
 class TeamsController < ApplicationController
+
+  def show
+    @team = Team.find(params[:id])
+  end
+
   def index
     @all_team = Team.all
     @all_player = Player.all
@@ -16,6 +21,7 @@ class TeamsController < ApplicationController
 
   def destroy
     Team.delete(params[:id])
+    redirect_to teams_path
   end
 
   def team_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

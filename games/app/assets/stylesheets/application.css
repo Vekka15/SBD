@@ -3,31 +3,30 @@ body{
 }
 
 /* PANEL BOCZNY */
-
+/*wygląd napisu przycisku*/
 a#side-link{
   display: block;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  padding: 11px;
+  padding: 11px; /*tak jakby rozmiar*/
 }
-
+/*jak ma wyglądac po najechaniu*/
 a:hover#side-link{
   background-color: #36454f;
 }
-
-
+/*tekst ma być obok panelu*/
 div.text{
   margin-left: 400px;
 }
-
+/*wyglad panelu za pomoca listy*/
 ul.side-menu{
   padding: 0;
   margin: 0;
-  width: 250px;
-  height: 100%;
+  width: 250px; /*szerokosc*/
+  height: 100%; /*wysokosc na calosc strony*/
   overflow: auto;
-  position: fixed;
+  position: fixed; /*bez względu na scrollowanie*/
   list-style-type: none;
   background-color: #4f5b66;
 }
@@ -45,6 +44,11 @@ li{
   display: inline;
 }
 /*wygląd po najechaniu */
+body.games a.games:hover#menu{
+  color: white ;
+  background-color: #d62d20;
+}
+
 a:hover#menu{
   text-decoration: none;
   text-transform: uppercase;
@@ -58,6 +62,15 @@ body.teams a.teams:link,
 body.matches a.matches:link {
 	color: white ;
 	background-color: #d62d20;
+}
+
+body.games a.games:hover#menu,
+body.player a.player:hover#menu,
+body.conventions a.conventions:hover#menu,
+body.teams a.teams:hover#menu,
+body.matches a.matches:hover#menu{
+  color: white;
+  background-color: #d62d20;
 }
 /*pasek z listą elementów menu */
 ul.pasek{

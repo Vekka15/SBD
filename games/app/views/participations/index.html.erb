@@ -14,6 +14,7 @@
   <td> Id gry: <%= p.match_id %> </td>
   <td> Utworzenie: <%= p.created_at %> </td>
   <td> <%=link_to("Usuń", player_participation_path(@player,p), method: :delete) %> </td>
+  <td> <%=link_to("Wyświetl",player_participation_path(@player,p)) %> </td>
   <%end%>
 </tr>
   <%end%>

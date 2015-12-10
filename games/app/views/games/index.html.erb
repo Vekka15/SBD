@@ -13,6 +13,8 @@
   <td> <%= f.number_players %> </td>
   <td> <%= f.time %> </td>
   <td> <%= f.rate %> </td>
+  <td> <%= link_to("Usuń", game_path(f),method: :delete) %> </td>
+  <td> <%= link_to("Wyświetl", game_path(f)) %> </td>
 </tr>
 <%end%>
 </tables>

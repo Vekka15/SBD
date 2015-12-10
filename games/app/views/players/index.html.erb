@@ -18,6 +18,8 @@
   <td> <%= p.age %> </td> <br>
   <td><%= Team.find(p.team_id).name %> </td> <br>
   <td><%=link_to("Uczestnictwa",player_participations_path(p)) %></td>
+  <td><%= link_to("Usuń", player_path(p),method: :delete) %> </td>
+  <td> <%= link_to("Wyświetl", player_path(p)) %> </td>
 </tr>
 <%end%>
 </table>

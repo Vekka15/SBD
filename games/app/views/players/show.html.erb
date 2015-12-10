@@ -1,0 +1,7 @@
+<div> Nick: <%= @player.nickname %> </div>
+<div> Imię: <%= @player.name %> </div>
+<div> Nazwisko: <%= @player.surname %> </div>
+<div> Wiek: <%= @player.age %> </div>
+<div> Drużyna: <%= Team.find(@player.team_id).name %> </div>
+
+<%=link_to("Wróć",teams_path) %>

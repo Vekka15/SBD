@@ -16,6 +16,8 @@
   <td> <%= t.city %> </td> <br>
   <td> <%= t.symbol %> </td> <br>
   <td> <%= t.level %> </td> <br>
+  <td> <%=link_to("Usuń", team_path(t), method: :delete) %> </td>
+  <td> <%= link_to("Wyświetl",team_path(t)) %> </td>
 </tr>
 <% end %>
 </table>
