@@ -20,6 +20,7 @@
   <td> <%= c.level %> </td>
   <td> <%= link_to("Usuń", convention_path(c),method: :delete) %> </td>
   <td> <%= link_to("Wyświetl", convention_path(c)) %> </td>
+  <td> <%=link_to("Edytuj",edit_convention_path(c)) %> </td>
 </tr>
 <%end%>
 </table>

@@ -20,6 +20,7 @@
   <td><%= Convention.find(m.convention_id).name %> </td> <br>
   <td> <%=link_to("Usuń", match_path(m), method: :delete) %> </td>
   <td> <%=link_to("Wyświetl", match_path(m)) %> </td>
+  <td> <%= link_to("Edytuj",edit_match_path(m)) %> </td>
 </tr>
 <%end%>
 </table>

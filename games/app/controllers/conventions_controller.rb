@@ -1,5 +1,19 @@
 class ConventionsController < ApplicationController
 
+  def edit
+    @change_convention = Convention.find(params[:id])
+  end
+
+  def update
+    @change_convention = Convention.find(params[:id])
+  if  @change_convention.update_attributes(convention_params)
+    redirect_to conventions_path
+  else
+    flash[:error]="Pusty element"
+    render 'edit'
+  end
+  end
+
   def show
     @convention = Convention.find(params[:id])
   end

@@ -1,5 +1,15 @@
 class MatchesController < ApplicationController
 
+  def edit
+    @change_match = Match.find(params[:id])
+  end
+
+  def update
+    @change_match = Match.find(params[:id])
+    @change_match.update_attributes(match_params)
+    redirect_to games_path
+  end
+
   def show
     @match = Match.find(params[:id])
   end
