@@ -2,12 +2,17 @@ class PlayersController < ApplicationController
 
   def edit
     @change_player = Player.find(params[:id])
+    @change_player.team_name = Team.find(@change_player.team_id).name
   end
 
   def update
     @change_player = Player.find(params[:id])
-    @change_player.update_attributes(player_params)
-    redirect_to players_path
+    if @change_player.update_attributes(player_params)
+      redirect_to players_path
+    else
+      flash[:alert]="Failed editing"
+      render 'edit'
+    end
   end
 
   def show
@@ -24,10 +29,21 @@ class PlayersController < ApplicationController
 
   def create
     new_player= Player.new(player_params)
-    team=Team.find_by_name(params[:player][:team_name])
-    new_player.team_id=team.id
-    new_player.save
-    redirect_to root_path
+    if params[:player][:team_name]!=""
+      team=Team.find_by_name(params[:player][:team_name])
+      new_player.team_id=team.id
+      if new_player.save
+        redirect_to players_path
+      else
+        flash[:alert]="Failed creating"
+        @new_player=Player.new
+        render 'new'
+      end
+    else
+      flash[:alert]="Failed creating"
+      @new_player=Player.new
+      render 'new'
+    end
   end
 
   def destroy

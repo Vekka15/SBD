@@ -1,16 +1,19 @@
+<%= flash[:alert] %>
+<% flash.clear %>
+
 <%= form_for @new_team do |f|%>
   <%= f.label :name %>
   <%= f.text_field :name %>
-
+<br>
   <%= f.label :city%>
   <%= f.text_field :city %>
-
+<br>
   <%= f.label :symbol%>
   <%= f.text_field :symbol%>
-
+<br>
   <%= f.label :level%>
   <%= f.text_field :level%>
-
+<br>
   <%= f.submit %>
 
 <%end%>

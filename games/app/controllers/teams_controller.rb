@@ -6,8 +6,12 @@ class TeamsController < ApplicationController
 
   def update
     @change_team = Team.find(params[:id])
-    @change_team.update_attributes(team_params)
-    redirect_to teams_path
+    if @change_team.update_attributes(team_params)
+      redirect_to teams_path
+    else
+      flash[:alert]="Failed editing"
+      render 'edit'
+    end
   end
 
   def show
@@ -25,8 +29,13 @@ class TeamsController < ApplicationController
 
   def create
     new_team = Team.new(team_params)
-    new_team.save
-    redirect_to root_path
+    if new_team.save
+      redirect_to root_path
+    else
+      flash[:alert]="Failed creating"
+      @new_team = Team.new
+      render 'new'
+    end
   end
 
   def destroy

@@ -1,5 +1,5 @@
-<%= flash[:error] %>
-
+<%= flash[:alert] %>
+<% flash.clear %>
 
 <%= form_for [@player,@new_participation] do |p| %>
   <%= p.label "Wybierz gre:" %>

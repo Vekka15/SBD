@@ -1,3 +1,6 @@
+<%= flash[:alert] %>
+<% flash.clear %>
+
 <%= form_for @change_player do |f|%>
   <%= f.label "Nick:" %>
   <%= f.text_field :nickname %>
