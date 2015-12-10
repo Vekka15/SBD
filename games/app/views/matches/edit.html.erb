@@ -1,3 +1,5 @@
+<%= flash[:alert] %>
+<% flash.clear %>
 <%= form_for @change_match do |m| %>
   <%= m.label "Czas" %>
   <%= m.text_field :time %>

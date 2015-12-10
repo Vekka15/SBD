@@ -6,8 +6,12 @@ class GamesController < ApplicationController
 
   def update
     @change_game = Game.find(params[:id])
-    @change_game.update_attributes(game_params)
-    redirect_to games_path
+    if @change_game.update_attributes(game_params)
+      redirect_to games_path
+    else
+      flash[:alert]="Pusta rubryka"
+      render 'edit'
+    end
   end
 
   def show
@@ -24,8 +28,13 @@ class GamesController < ApplicationController
 
   def create
     new_game = Game.new(game_params)
-    new_game.save
-    redirect_to root_path
+    if  new_game.save
+      redirect_to root_path
+    else
+      flash[:alert]="Pusta rubryka"
+      @new_game = Game.new
+      render 'new'
+    end
   end
 
   def destroy
@@ -34,7 +43,7 @@ class GamesController < ApplicationController
   end
 
   def game_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
-    params.require(:game).permit(:name,:number_players,:rate)
+    params.require(:game).permit(:name,:time,:number_players,:rate)
   end
 
 end

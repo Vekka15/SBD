@@ -1,5 +1,5 @@
-<%= flash[:error] %>
-
+<%= flash.now[:alert] %>
+<% flash.clear %>
 <%= form_for(@change_convention) do |c| %>
   <%= c.label "Nazwa" %>
   <%= c.text_field :name %>

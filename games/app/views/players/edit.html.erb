@@ -1,0 +1,20 @@
+<%= form_for @change_player do |f|%>
+  <%= f.label "Nick:" %>
+  <%= f.text_field :nickname %>
+<br>
+  <%= f.label "Imię:" %>
+  <%= f.text_field :name %>
+<br>
+  <%= f.label "Nazwisko:" %>
+  <%= f.text_field :surname %>
+<br>
+  <%= f.label "Wiek:" %>
+  <%= f.text_field :age %>
+<br>
+  <%= f.label "Nazwa drużyny:" %>
+  <%= f.text_field :team_name %>
+<br>
+
+  <%= f.submit %>
+
+<%end%>

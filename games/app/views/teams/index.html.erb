@@ -18,6 +18,7 @@
   <td> <%= t.level %> </td> <br>
   <td> <%=link_to("Usuń", team_path(t), method: :delete) %> </td>
   <td> <%= link_to("Wyświetl",team_path(t)) %> </td>
+  <td> <%= link_to("Edytuj",edit_team_path(t)) %> </td>
 </tr>
 <% end %>
 </table>

@@ -9,7 +9,7 @@ class ConventionsController < ApplicationController
   if  @change_convention.update_attributes(convention_params)
     redirect_to conventions_path
   else
-    flash[:error]="Pusty element"
+    flash[:alert]="Pusty element"
     render 'edit'
   end
   end
@@ -27,9 +27,14 @@ class ConventionsController < ApplicationController
   end
 
   def create
-    convention = Convention.new(convention_params)
-    convention.save
-    redirect_to root_path
+      convention = Convention.new(convention_params)
+    if convention.save
+      redirect_to conventions_path
+    else
+      flash[:alert]="Popełniony jest błąd"
+      @convention = Convention.new
+      render 'new'
+    end
   end
 
   def destroy

@@ -1,5 +1,15 @@
 class PlayersController < ApplicationController
 
+  def edit
+    @change_player = Player.find(params[:id])
+  end
+
+  def update
+    @change_player = Player.find(params[:id])
+    @change_player.update_attributes(player_params)
+    redirect_to players_path
+  end
+
   def show
     @player = Player.find(params[:id])
   end

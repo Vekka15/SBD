@@ -1,5 +1,15 @@
 class TeamsController < ApplicationController
 
+  def edit
+    @change_team = Team.find(params[:id])
+  end
+
+  def update
+    @change_team = Team.find(params[:id])
+    @change_team.update_attributes(team_params)
+    redirect_to teams_path
+  end
+
   def show
     @team = Team.find(params[:id])
   end

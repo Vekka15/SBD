@@ -1,7 +1,11 @@
-
+<%= flash[:alert] %>
+<% flash.clear %>
 <%= form_for @new_game do |f|%>
   <%= f.label :name %>
   <%= f.text_field :name %>
+<br>
+  <%=f.label "Czas" %>
+  <%=f.text_field :time %>
 <br>
   <%= f.label :number_players %>
   <%= f.text_field :number_players %>

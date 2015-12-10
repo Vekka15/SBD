@@ -1,0 +1,12 @@
+<%= flash[:error] %>
+
+
+<%= form_for [@player,@change_participation] do |p| %>
+  <%= p.label "Wybierz gre:" %>
+  <%= p.text_field :match_id %>
+
+  <%= p.submit %>
+
+
+<%end%>
+  <%= debug(params) %>

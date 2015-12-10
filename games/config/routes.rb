@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :players
   resources :conventions
   resources :matches
+  resources :participations
   resources :players do
     resources :participations
   end
