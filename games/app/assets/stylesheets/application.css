@@ -1,5 +1,6 @@
 body{
   background-color: white;
+  margin: 0;
 }
 
 /* PANEL BOCZNY */
@@ -9,25 +10,26 @@ a#side-link{
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  padding: 11px; /*tak jakby rozmiar*/
+  padding: 8px 0 8px 16px; /*tak jakby rozmiar*/
 }
 /*jak ma wyglądac po najechaniu*/
 a:hover#side-link{
   background-color: #36454f;
 }
 /*tekst ma być obok panelu*/
-div.text{
-  margin-left: 400px;
+table{
+  margin-top: 0;
+  margin-left: 20%;
 }
 /*wyglad panelu za pomoca listy*/
-ul.side-menu{
+ul#side-menu{
+  list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 250px; /*szerokosc*/
+  width: 15%; /*szerokosc*/
   height: 100%; /*wysokosc na calosc strony*/
   overflow: auto;
   position: fixed; /*bez względu na scrollowanie*/
-  list-style-type: none;
   background-color: #4f5b66;
 }
 

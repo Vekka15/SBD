@@ -1,5 +1,7 @@
 <body class="player">
-<%= link_to("Nowy gracz", new_player_path) %>
+  <ul id="side-menu"
+<li><%= link_to("Nowy gracz", new_player_path,id: "side-link") %></li>
+</ul>
 <table>
   <tr>
     <th> Id </th>
@@ -12,11 +14,11 @@
 <% @all_player.each do |p| %>
 <tr>
   <td> <%= p.id %> </td>
-  <td><%= p.nickname %> </td> <br>
-  <td> <%=p.name %> </td> <br>
-  <td> <%=p.surname %> </td> <br>
-  <td> <%= p.age %> </td> <br>
-  <td><%= Team.find(p.team_id).name %> </td> <br>
+  <td><%= p.nickname %> </td>
+  <td> <%=p.name %> </td>
+  <td> <%=p.surname %> </td>
+  <td> <%= p.age %> </td>
+  <td><%= Team.find(p.team_id).name %> </td>
   <td><%=link_to("Uczestnictwa",player_participations_path(p)) %></td>
   <td><%= link_to("Usuń", player_path(p),method: :delete) %> </td>
   <td> <%= link_to("Wyświetl", player_path(p)) %> </td>
