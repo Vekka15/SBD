@@ -10,6 +10,7 @@ class ConventionsController < ApplicationController
     redirect_to conventions_path
   else
     flash[:alert]="Pusty element"
+    document.alert("pusty element")
     render 'edit'
   end
   end

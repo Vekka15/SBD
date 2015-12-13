@@ -1,6 +1,5 @@
 
 <body class="conventions">
-<%= link_to("Dodaj nowy", new_convention_path) %>
 <table>
   <tr>
     <th>Id</th>
@@ -15,7 +14,7 @@
   <td> <%=c.id %> </td>
   <td> <%= c.name %> </td>
   <td><%= c.start %> </td>
-  <td><%=c.end %> </td> 
+  <td><%=c.end %> </td>
   <td><%= c.country %> </td>
   <td> <%= c.level %> </td>
   <td> <%= link_to("Usuń", convention_path(c),method: :delete) %> </td>

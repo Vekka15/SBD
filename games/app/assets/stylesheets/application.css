@@ -6,31 +6,23 @@ body{
 /* PANEL BOCZNY */
 /*wygląd napisu przycisku*/
 a#side-link{
-  display: block;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  padding: 8px 0 8px 16px; /*tak jakby rozmiar*/
+  padding: 6px;
+  margin: 0;
 }
 /*jak ma wyglądac po najechaniu*/
 a:hover#side-link{
   background-color: #36454f;
 }
 /*tekst ma być obok panelu*/
-table{
-  margin-top: 0;
-  margin-left: 20%;
-}
 /*wyglad panelu za pomoca listy*/
 ul#side-menu{
+  padding: 5px;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: 15%; /*szerokosc*/
-  height: 100%; /*wysokosc na calosc strony*/
-  overflow: auto;
-  position: fixed; /*bez względu na scrollowanie*/
-  background-color: #4f5b66;
+  background-color: #999999;
+  margin-top: 0;
 }
 
 /*MENU NA PASKU */
@@ -40,6 +32,7 @@ a#menu{
   text-transform: uppercase;
   color: white;
   padding: 11px;
+  margin: 0;
 }
 /* wyswietlanie w lini poziomej*/
 li{
@@ -55,6 +48,7 @@ a:hover#menu{
   text-decoration: none;
   text-transform: uppercase;
   background-color: #343d46;
+  margin:0;
 }
 /*zaznaczanie tego elementu na ktorym się znajdujemy */
 body.games a.games:link,
@@ -79,9 +73,15 @@ ul.pasek{
   padding: 10px;
   list-style-type: none;
   background-color: #4f5b66;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*TABLICE */
+
+table{
+  text-align: center;
+}
 
 table, tr, td,th{
   border-style: solid;

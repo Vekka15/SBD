@@ -1,9 +1,5 @@
 <body class="teams">
-  <ul id="side-menu"
-<li id="side"><%= link_to("Dodaj druzyne",new_team_path, id: "side-link") %></li>
-</ul>
-<div>
-  <table>
+<table>
     <tr>
       <th> Nazwa </th>
       <th> Miasto </th>
@@ -15,13 +11,12 @@
   <td> <%= t.name %> </td>
   <td> <%= t.city %> </td>
   <td> <%= t.symbol %> </td>
-  <td> <%= t.level %> </td> 
+  <td> <%= t.level %> </td>
   <td> <%=link_to("Usuń", team_path(t), method: :delete) %> </td>
   <td> <%= link_to("Wyświetl",team_path(t)) %> </td>
   <td> <%= link_to("Edytuj",edit_team_path(t)) %> </td>
 </tr>
 <% end %>
 </table>
-</div>
-<%= debug(params)
+<%= debug(params)%>
 </body>
