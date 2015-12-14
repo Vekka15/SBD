@@ -19,7 +19,7 @@ a:hover#side-link{
 /*tekst ma być obok panelu*/
 /*wyglad panelu za pomoca listy*/
 ul#side-menu{
-  padding: 5px;
+  padding: 7px;
   list-style-type: none;
   background-color: #65737e;
   margin-top: 0;
@@ -118,6 +118,7 @@ label{
 }
 
 .submit-style{
+
   margin-left: 41%;
   background-color: #fe5757;
   width: 150px;

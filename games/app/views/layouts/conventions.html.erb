@@ -11,6 +11,10 @@
 </ul>
 <ul id="side-menu">
 <li><%= link_to("Nowe",new_convention_path,id: "side-link") %></li>
+<li style="float: right"><%= form_tag({:controller => 'conventions', :action => 'search'},:method => 'get') do%>
+  <%= text_field_tag "text" %>
+  <%= submit_tag "Search" %>
+<%end%></li>
 </ul>
 <%= yield %>
 </body>

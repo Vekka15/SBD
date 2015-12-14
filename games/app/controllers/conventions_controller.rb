@@ -43,6 +43,10 @@ class ConventionsController < ApplicationController
     redirect_to conventions_path
   end
 
+  def search
+    @convention = Convention.find_by_name(params[:text])
+  end
+
   def convention_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
     params.require(:convention).permit(:name,:start,:end,:country,:level)
   end
