@@ -120,7 +120,9 @@ label{
 .submit-style{
 
   margin-left: 41%;
-  background-color: #fe5757;
+  background-color: #d62d20;
+  color: white;
+  text-transform: uppercase;
   width: 150px;
   height: 50px;
 }

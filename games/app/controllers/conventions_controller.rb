@@ -44,7 +44,7 @@ class ConventionsController < ApplicationController
   end
 
   def search
-    @convention = Convention.find_by_name(params[:text])
+    @convention = Convention.where("name ~* ?", "#{params[:text]}[a-b]*")
   end
 
   def convention_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

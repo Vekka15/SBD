@@ -1,3 +1,23 @@
-<%= @convention.name %>
-<%= @convention.start %>
-<%= @convention.end %>
+<body class="conventions">
+<p1> Wyszukiwanie: </p1>
+<table align='center'>
+<tr>
+  <th>Id</th>
+  <th>Nazwa</th>
+  <th>Start</th>
+  <th>Koniec</th>
+  <th>Kraj</th>
+  <th>Poziom</th>
+</tr>
+<% @convention.each do |c| %>
+<tr>
+  <td><%=c.id %> </td>
+  <td><%= c.name %></td>
+  <td><%= c.start %></td>
+  <td><%= c.end %></td>
+  <td><%= c.country %> </td>
+  <td> <%= c.level %> </td>
+</tr>
+<%end%>
+</table>
+</body>
