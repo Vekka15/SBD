@@ -1,18 +1,20 @@
+<body class="games">
 <%= flash[:alert] %>
 <% flash.clear %>
 <%= form_for @new_game do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-<br>
-  <%=f.label "Czas" %>
-  <%=f.text_field :time %>
-<br>
-  <%= f.label :number_players %>
-  <%= f.text_field :number_players %>
-<br>
-  <%= f.label :rate %>
-  <%= f.text_field :rate %>
-<br>
-  <%= f.submit %>
+  <%= f.label "Nazwa" %> <br>
+  <%= f.text_field :name, class: "input-style"  %>
+  <br>
+  <%=f.label "Czas" %> <br>
+  <%=f.text_field :time, class: "input-style"  %>
+  <br>
+  <%= f.label "Liczba graczy" %> <br>
+  <%= f.text_field :number_players, class: "input-style"  %>
+  <br>
+  <%= f.label "Ocena" %> <br>
+  <%= f.text_field :rate, class: "input-style"  %>
+  <br>
+  <%= f.submit "Accept", class: 'submit-style'%>
 
 <%end%>
+</body>

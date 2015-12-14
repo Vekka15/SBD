@@ -1,23 +1,26 @@
+<body class="player">
+
 <%= flash[:alert] %>
 <% flash.clear %>
 
 <%= form_for @change_player do |f|%>
-  <%= f.label "Nick:" %>
-  <%= f.text_field :nickname %>
+  <%= f.label "Nick:" %><br>
+  <%= f.text_field :nickname, class: "input-style" %>
 <br>
-  <%= f.label "Imię:" %>
-  <%= f.text_field :name %>
+  <%= f.label "Imię:" %><br>
+  <%= f.text_field :name, class: "input-style" %>
 <br>
-  <%= f.label "Nazwisko:" %>
-  <%= f.text_field :surname %>
+  <%= f.label "Nazwisko:" %><br>
+  <%= f.text_field :surname, class: "input-style" %>
 <br>
-  <%= f.label "Wiek:" %>
-  <%= f.text_field :age %>
+  <%= f.label "Wiek:" %><br>
+  <%= f.text_field :age, class: "input-style" %>
 <br>
-  <%= f.label "Nazwa drużyny:" %>
-  <%= f.text_field :team_name %>
+  <%= f.label "Nazwa drużyny:" %><br>
+  <%= f.text_field :team_name, class: "input-style" %>
 <br>
 
-  <%= f.submit %>
+  <%= f.submit "Accept", class: 'submit-style' %>
 
 <%end%>
+</body>

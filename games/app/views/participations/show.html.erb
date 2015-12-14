@@ -1,5 +1,8 @@
+<body class="participations" >
+
 <div> Nazwa gracza: <%= Player.find(@participation.player_id).name %> </div>
 <div> Id rzogrywki: <%= Match.find(@participation.match_id).id %> </div>
 <div> Data utworzenia: <%= @participation.created_at %> </div>
 
 <%= link_to("Wróć",player_participations_path(Player.find(@participation.player_id))) %>
+</body>

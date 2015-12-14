@@ -1,22 +1,24 @@
-
+<body class="conventions">
 <%= flash.now[:alert] %>
 <% flash.clear %>
+
 <%= form_for @convention do |c| %>
-  <%= c.label "Nazwa" %>
-  <%= c.text_field :name %>
+  <%= c.label "Nazwa", class: "label-style"%> <br>
+  <%= c.text_field :name, class: "input-style"  %>
   <br>
-  <%= c.label "Start" %>
-  <%= c.text_field :start %>
+  <%= c.label "Start" %> <br>
+  <%= c.text_field :start, class: "input-style" %>
   <br>
-  <%= c.label "Koniec" %>
-  <%=c.text_field :end %>
+  <%= c.label "Koniec" %> <br>
+  <%=c.text_field :end, class: "input-style" %>
   <br>
-  <%= c.label "Kraj" %>
-  <%= c.text_field :country %>
+  <%= c.label "Kraj" %> <br>
+  <%= c.text_field :country, class: "input-style" %>
   <br>
-  <%= c.label "Poziom" %>
-  <%= c.text_field :level %>
+  <%= c.label "Poziom" %> <br>
+  <%= c.text_field :level, class: "input-style" %>
   <br>
-  <%= c.submit %>
+  <%= c.submit 'Accept', class: 'submit-style' %>
 
 <%end%>
+</body>

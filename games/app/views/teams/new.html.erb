@@ -1,19 +1,24 @@
+<body class="teams">
+
 <%= flash[:alert] %>
 <% flash.clear %>
 
 <%= form_for @new_team do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label "Nazwa" %> <br>
+  <%= f.text_field :name, class: "input-style" %>
 <br>
-  <%= f.label :city%>
-  <%= f.text_field :city %>
+  <%= f.label "Miasto"%><br>
+  <%= f.text_field :city, class: "input-style" %>
 <br>
-  <%= f.label :symbol%>
-  <%= f.text_field :symbol%>
+  <%= f.label "Symbol"%><br>
+  <%= f.text_field :symbol, class: "input-style"%>
 <br>
-  <%= f.label :level%>
-  <%= f.text_field :level%>
+  <%= f.label "Poziom"%><br>
+  <%= f.text_field :level, class: "input-style"%>
 <br>
-  <%= f.submit %>
+  <%= f.submit "Accept", class: 'submit-style'%>
+
+  <!-- , style: "margin-left: 44% border: 1px" -->
 
 <%end%>
+</body>

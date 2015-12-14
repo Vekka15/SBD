@@ -1,3 +1,5 @@
+<body class="matches">
+
 <div> Czas: <%= @match.time %> </div>
 <div> Liczba miejsc: <%=@match.seats_number %> </div>
 <div> Nagroda: <%=@match.price %> </div>
@@ -5,3 +7,4 @@
 <div> Nazwa zjazdu: <%= Convention.find(@match.convention_id).name %> </div>
 
 <%= link_to("Wróć", matches_path) %>
+</body>

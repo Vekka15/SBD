@@ -1,23 +1,27 @@
+<body class="matches">
+
 <%= flash[:alert] %>
 <% flash.clear %>
 
 <%= form_for @match do |m| %>
-  <%= m.label "Czas" %>
-  <%= m.text_field :time %>
+  <%= m.label "Czas" %><br>
+  <%= m.text_field :time, class: "input-style" %>
 <br>
-  <%= m.label "Liczba miejsc" %>
-  <%= m.text_field :seats_number %>
+  <%= m.label "Liczba miejsc" %><br>
+  <%= m.text_field :seats_number, class: "input-style" %>
 <br>
-  <%= m.label "Nagroda" %>
-  <%= m.text_field :price %>
+  <%= m.label "Nagroda" %><br>
+  <%= m.text_field :price, class: "input-style" %>
 <br>
-  <%= m.label "Nazwa gry" %>
-  <%= m.text_field :game_name %>
+  <%= m.label "Nazwa gry" %><br>
+  <%= m.text_field :game_name, class: "input-style" %>
 <br>
-  <%= m.label "Nazwa zjazdu" %>
-  <%= m.text_field :convention_name %>
+  <%= m.label "Nazwa zjazdu" %><br>
+  <%= m.text_field :convention_name, class: "input-style" %>
 <br>
 
-  <%= m.submit %>
+  <%= m.submit "Accept", class: 'submit-style'%>
 
 <%end%>
+
+</body>

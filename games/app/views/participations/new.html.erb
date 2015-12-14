@@ -1,12 +1,15 @@
+<body class="participations">
+
 <%= flash[:alert] %>
 <% flash.clear %>
 
 <%= form_for [@player,@new_participation] do |p| %>
-  <%= p.label "Wybierz gre:" %>
-  <%= p.text_field :match_id %>
-
-  <%= p.submit %>
+  <%= p.label "Wybierz gre:" %> <br>
+  <%= p.text_field :match_id, class: "input-style" %>
+<br>
+  <%= p.submit "Accept", class: 'submit-style'%>
 
 
 <%end%>
   <%= debug(params) %>
+</body>

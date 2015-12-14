@@ -21,8 +21,9 @@ a:hover#side-link{
 ul#side-menu{
   padding: 5px;
   list-style-type: none;
-  background-color: #999999;
+  background-color: #65737e;
   margin-top: 0;
+  margin-bottom:5%;
 }
 
 /*MENU NA PASKU */
@@ -79,10 +80,6 @@ ul.pasek{
 
 /*TABLICE */
 
-table{
-  text-align: center;
-}
-
 table, tr, td,th{
   border-style: solid;
   border-width: 1px;
@@ -91,4 +88,38 @@ table, tr, td,th{
 
 tr,td, th{
   padding: 15px;
+}
+
+/* FORM */
+
+label{
+  color: black;
+  margin-left: 38%;
+}
+
+.input-style{
+  padding: 10px;
+  border: solid 1px #fff;
+  border-color: black;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+  margin-left: 38%;
+  margin-bottom: 1%;
+}
+
+.input-style:focus{
+  padding: 10px;
+  border: solid 1px #fff;
+  border-color: red;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+  margin-left: 38%;
+  margin-bottom: 1%;
+}
+
+.submit-style{
+  margin-left: 41%;
+  background-color: #fe5757;
+  width: 150px;
+  height: 50px;
 }
