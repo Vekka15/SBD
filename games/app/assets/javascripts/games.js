@@ -1,10 +1,3 @@
-
-//= require games.js
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
-
-
 $(document).ready(function(){
     $('#present').mouseenter(function(){
         alert("MouseEnter!"); // This will create an alert box

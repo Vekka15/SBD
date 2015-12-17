@@ -17,11 +17,11 @@
   <%= f.text_field :age, class: "input-style" %>
 <br>
   <%= f.label "Nazwa drużyny:" %><br>
-  <%= f.text_field :team_name, class: "input-style" %>
+  <%= f.collection_select :team_id,Team.all,:id, :name, prompt: true %>
 <br>
 
   <%= f.submit "Accept", class: 'submit-style' %>
 
 <%end%>
-
+<%= debug(params) %>
 </body>

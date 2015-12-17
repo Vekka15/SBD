@@ -1,22 +1,53 @@
 <body class="teams">
-<table align='center'>
-    <tr>
-      <th> Nazwa </th>
-      <th> Miasto </th>
-      <th> Symbol </th>
-      <th> Poziom </th>
-    </tr>
+  <script>
+  var number =0;
+  function loadDoc(button,val,war) {
+     if (button.className==''){
+       button.className=number;
+       number=number+1;
+     }
+    var i =button.className;
+    var ele=document.getElementsByClassName("present");
+    if(ele[i].style.display == 'none'){
+        ele[i].style.display = 'inline';
+      }else{
+      ele[i].style.display = 'none';
+    }
+
+  }
+  </script>
+  <div class="test"> </div>
+<ul class='name-list'>
+      <li> Nazwa </li>
+      <li> Miasto </li>
+      <li> Symbol </li>
+      <li> Poziom </li>
+    </ul>
 <% @all_team.each do |t| %>
-<tr>
-  <td> <%= t.name %> </td>
-  <td> <%= t.city %> </td>
-  <td> <%= t.symbol %> </td>
-  <td> <%= t.level %> </td>
-  <td> <%=link_to("Usuń", team_path(t), method: :delete) %> </td>
-  <td> <%= link_to("Wyświetl",team_path(t)) %> </td>
-  <td> <%= link_to("Edytuj",edit_team_path(t)) %> </td>
-</tr>
+<ul class="name-list">
+  <li> <%= t.name %> </li>
+  <li> <%= t.city %> </li>
+  <li> <%= t.symbol %> </li>
+  <li> <%= t.level %> </li>
+  <li> <%=link_to("Usuń", team_path(t), method: :delete) %> </li>
+  <li> <%= link_to("Wyświetl",team_path(t)) %> </li>
+  <li> <%= link_to("Edytuj",edit_team_path(t)) %> </li>
+  <li><button onclick="loadDoc(this,'test',number)" >Wysiwetl</button></li>
+    <div class="present">
+      <% @all_player.each do |p| %>
+      <% if p.team_id == t.id %>
+      <ul class="name-list">
+        <li> <%= p.nickname %> </li>
+        <li> <%= p.name %> </li>
+        <li> <%= p.surname %> </li>
+        <li> <%= p.age %> </li>
+      </ul>
+      <% end %>
+      <%end%>
+    </div>
+</ul>
 <% end %>
-</table>
+</ul>
+
 <%= debug(params)%>
 </body>

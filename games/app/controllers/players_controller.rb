@@ -29,9 +29,6 @@ class PlayersController < ApplicationController
 
   def create
     new_player= Player.new(player_params)
-    if params[:player][:team_name]!=""
-      team=Team.find_by_name(params[:player][:team_name])
-      new_player.team_id=team.id
       if new_player.save
         redirect_to players_path
       else
@@ -39,11 +36,6 @@ class PlayersController < ApplicationController
         @new_player=Player.new
         render 'new'
       end
-    else
-      flash[:alert]="Failed creating"
-      @new_player=Player.new
-      render 'new'
-    end
   end
 
   def destroy
@@ -52,10 +44,7 @@ class PlayersController < ApplicationController
   end
 
   def player_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
-    params.require(:player).permit(:nickname,:name,:surname,:age)
+    params.require(:player).permit(:nickname,:name,:surname,:age,:team_id)
   end
 
-  def team_name
-    params.require(:player).permit(:team_name)
-  end
 end

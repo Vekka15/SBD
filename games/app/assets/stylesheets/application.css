@@ -3,6 +3,10 @@ body{
   margin: 0;
 }
 
+div.present{
+  display: none;
+}
+
 /* PANEL BOCZNY */
 /*wygląd napisu przycisku*/
 a#side-link{
@@ -15,6 +19,7 @@ a#side-link{
 /*jak ma wyglądac po najechaniu*/
 a:hover#side-link{
   background-color: #36454f;
+  padding: 8.5px;
 }
 /*tekst ma być obok panelu*/
 /*wyglad panelu za pomoca listy*/

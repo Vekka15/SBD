@@ -57,8 +57,6 @@ ActiveRecord::Schema.define(version: 20151206122842) do
     t.integer  "team_id"
   end
 
-  add_index "players", ["team_id"], name: "index_players_on_team_id", using: :btree
-
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "city"
