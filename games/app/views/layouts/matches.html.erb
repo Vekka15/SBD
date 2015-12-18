@@ -9,8 +9,8 @@
   <ul class="pasek">
 <li class="pasek"><%=link_to("Gracze",players_path,id: "menu",class: "player") %></li><li class="pasek"><%=link_to("Drużyny",teams_path,id: "menu",class: "teams") %></li><li class="pasek"><%=link_to("Zjazdy",conventions_path,id: "menu",class: "conventions") %></li><li class="pasek"><%=link_to("Gry",games_path,id: "menu",class: "games") %></li><li class="pasek"><%=link_to("Rozgrywki",matches_path,id: "menu",class: "matches") %></li><li class="pasek"><%= link_to("Uczestnictwa", participations_path, id: "menu", class: "participation") %> </li>
 </ul>
-<ul id="side-menu">
-<li><%= link_to("Nowe",new_match_path,id: "side-link") %></li>
+<ul class="side-menu">
+<li class="side-menu"><%= link_to("Nowe",new_match_path,class: "side-menu") %></li>
 </ul>
 <%= yield %>
 </body>

@@ -1,26 +1,25 @@
 <body class="matches">
-<table align='center'>
-  <tr>
-    <th> Id </th>
-    <th> Czas </th>
-    <th> Liczba miejsc </th>
-    <th> Nagroda </th>
-    <th> Nazwa gry </th>
-    <th> Nazwa zjazdu </th>
-  </tr>
+  <ul class="title-list">
+    <li class="title-ele"> Czas </li>
+    <li class="title-ele"> Liczba miejsc </li>
+    <li class="title-ele"> Prize </li>
+    <li class="title-ele"> Gra </li>
+    <li class="title-ele"> zjazd </li>
+    <li class="title-ele"> Delete </li>
+    <li class="title-ele"> Show </li>
+    <li class="title-ele"> Edit </li>
+  </ul>
 <% @all_matches.each do |m| %>
-<tr>
-  <td> <%= @indeks %> </td>
-  <% @indeks=@indeks+1 %>
-  <td> <%= m.time %> </td>
-  <td> <%= m.seats_number %> </td>
-  <td> <%= m.price %> </td>
-  <td> <%= Game.find(m.game_id).name %> </td>
-  <td><%= Convention.find(m.convention_id).name %> </td>
-  <td> <%=link_to("Usuń", match_path(m), method: :delete) %> </td>
-  <td> <%=link_to("Wyświetl", match_path(m)) %> </td>
-  <td> <%= link_to("Edytuj",edit_match_path(m)) %> </td>
-</tr>
+<ul class="name-list">
+  <li class="name-list"><div class="name-list"><%= m.time %></div> </li>
+  <li class="name-list"><div class="name-list"><%= m.seats_number %> </div></li>
+  <li class="name-list"><div class="name-list"><%= m.price %></div> </li>
+  <li class="name-list"><div class="name-list"><%= Game.find(m.game_id).name %></div> </li>
+  <li class="name-list"><div class="name-list"><%= Convention.find(m.convention_id).name %></div> </li>
+  <li class="name-list"><div class="name-list"><%=link_to("Usuń", match_path(m), method: :delete) %></div> </li>
+  <li class="name-list"><div class="name-list"><%=link_to("Wyświetl", match_path(m)) %></div> </li>
+  <li class="name-list"><div class="name-list"><%= link_to("Edytuj",edit_match_path(m)) %></div> </li>
+    <br>
+</ul>
 <%end%>
-</table>
 </body>

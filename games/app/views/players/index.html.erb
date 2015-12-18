@@ -1,26 +1,26 @@
 <body class="player">
-<table align='center'>
-  <tr>
-    <th> Id </th>
-    <th> Nickname </th>
-    <th> Imię </th>
-    <th> Nazwisko </th>
-    <th> Wiek </th>
-    <th> Nazwa drużyny </th>
-  </tr>
+<ul class="title-list">
+    <li class="title-ele"> Nickname </li>
+    <li class="title-ele"> Imię </li>
+    <li class="title-ele"> Nazwisko </li>
+    <li class="title-ele"> Wiek </li>
+    <li class="title-ele"> Team </li>
+    <li class="title-ele"> Delete </li>
+    <li class="title-ele"> Team </li>
+    <li class="title-ele"> Team </li>
+  </ul>
 <% @all_player.each do |p| %>
-<tr>
-  <td> <%= p.id %> </td>
-  <td><%= p.nickname %> </td>
-  <td> <%=p.name %> </td>
-  <td> <%=p.surname %> </td>
-  <td> <%= p.age %> </td>
-  <td><%= Team.find(p.team_id).name %> </td>
-  <td><%=link_to("Uczestnictwa",player_participations_path(p)) %></td>
-  <td><%= link_to("Usuń", player_path(p),method: :delete) %> </td>
-  <td> <%= link_to("Wyświetl", player_path(p)) %> </td>
-  <td> <%=link_to("Edytuj",edit_player_path(p)) %> </td>
-</tr>
+<ul class="name-list">
+  <li class="name-list"> <%= p.nickname %> </li>
+  <li class="name-list"> <%=p.name %> </li>
+  <li class="name-list"> <%=p.surname %> </li>
+  <li class="name-list"> <%= p.age %> </li>
+  <li class="name-list"> <%= Team.find(p.team_id).name %> </li>
+  <li class="name-list"> <%=link_to("Part",player_participations_path(p)) %></li>
+  <li class="name-list"> <%= link_to("Usuń", player_path(p),method: :delete) %> </li>
+  <li class="name-list">  <%= link_to("Wyświetl", player_path(p)) %> </li>
+  <li class="name-list"> <%=link_to("Edytuj",edit_player_path(p)) %> </li>
+</ul>
+<br>
 <%end%>
-</table>
 </body>

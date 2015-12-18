@@ -11,7 +11,7 @@
 </ul>
 <ul class="side-menu">
 <li class="side-menu"><%= link_to("Nowe",new_convention_path,class: "side-menu") %></li>
-<li style="float: right"><%= form_tag({:controller => 'conventions', :action => 'search'},:method => 'get') do%>
+<li class="side-menu" style="float: right"><%= form_tag({:controller => 'conventions', :action => 'search'},:method => 'get') do%>
   <%= text_field_tag "text" %>
   <%= submit_tag "Search" %>
 <%end%></li>

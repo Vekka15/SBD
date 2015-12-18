@@ -1,25 +1,23 @@
 <body class="conventions">
-<table align='center'>
-  <tr>
-    <th>Id</th>
-    <th>Nazwa</th>
-    <th>Start</th>
-    <th>Koniec</th>
-    <th>Kraj</th>
-    <th>Poziom</th>
-  </tr>
+  <ul class="title-list">
+    <li class="title-ele">Nazwa</li>
+    <li class="title-ele">Start</li>
+    <li class="title-ele">Koniec</li>
+    <li class="title-ele">Kraj</li>
+    <li class="title-ele">Poziom</li>
+  </ul>
 <% @all_conventions.each do |c| %>
-<tr>
-  <td> <%=c.id %> </td>
-  <td> <%= c.name %> </td>
-  <td><%= c.start %> </td>
-  <td><%=c.end %> </td>
-  <td><%= c.country %> </td>
-  <td> <%= c.level %> </td>
-  <td> <%= link_to("Usuń", convention_path(c),method: :delete) %> </td>
-  <td> <%= link_to("Wyświetl", convention_path(c)) %> </td>
-  <td> <%=link_to("Edytuj",edit_convention_path(c)) %> </td>
-</tr>
+<ul class="name-list">
+  <li class="name-list"><%= c.name %> </li>
+  <li class="name-list"><%= c.start %> </li>
+  <li class="name-list"><%=c.end %> </li>
+  <li class="name-list"><%= c.country %> </li>
+  <li class="name-list"><%= c.level %> </li>
+  <li class="name-list"><%= link_to("Usuń", convention_path(c),method: :delete) %> </li>
+  <li class="name-list"><%= link_to("Wyświetl", convention_path(c)) %> </li>
+  <li class="name-list"><%=link_to("Edytuj",edit_convention_path(c)) %> </li>
+</ul>
+<br>
 <%end%>
 </table>
 </body>
