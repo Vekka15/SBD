@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
 
   def edit
     @change_player = Player.find(params[:id])
-    @change_player.team_name = Team.find(@change_player.team_id).name
+    @name_of_team = Team.find(@change_player.team_id).name
   end
 
   def update

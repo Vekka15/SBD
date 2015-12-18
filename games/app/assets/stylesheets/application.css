@@ -210,3 +210,17 @@ label{
   width: 150px;
   height: 50px;
 }
+
+.select-tab{
+  align: center;
+  padding: 6px;
+  width: 252px;
+  border: solid 1px #fff;
+  border-color: black;
+  margin-left: 37.90%;
+  margin-bottom: 10px;
+}
+
+.select-tab:focus{
+  border-color: red;
+}
