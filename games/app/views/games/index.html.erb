@@ -1,29 +1,21 @@
 <body class="games">
-  <script>
-  function loadDoc() {
-        document.getElementById("present").style.display = 'none';
-  }
-  </script>
-  <ul class="row-list">
-<ul class='name-list'>
-
-    <li>Nazwa</li>
-    <li>Liczba graczy</li>
-    <li>Czas gry</li>
-    <li>Ocena </li>
+<ul class='title-list'>
+    <li class="title-ele">Nazwa</li>
+    <li class="title-ele">Liczba graczy</li>
+    <li class="title-ele">Czas gry</li>
+    <li class="title-ele">Ocena </li>
   </ul>
 <% @all_games.each do |f| %>
 <ul class="name-list">
-  <li> <%= f.name %> </li>
-  <li> <%= f.number_players %> </li>
-  <li> <%= f.time %> </li>
-  <li> <%= f.rate %> </li>
-  <li> <%= link_to("Usuń", game_path(f),method: :delete) %> </li>
-  <li> <%= link_to("Wyświetl", game_path(f)) %> </li>
-  <li> <%= link_to("Edytuj", edit_game_path(f)) %> </li>
-  <li><button type="button" onclick="loadDoc()" >Wysiwetl</button>
+  <li class="name-list"><div class="name-list"> <%= f.name %></div> </li>
+  <li class="name-list"><div class="name-list"> <%= f.number_players %></div> </li>
+  <li class="name-list"><div class="name-list"> <%= f.time %></div> </li>
+  <li class="name-list"><div class="name-list"> <%= f.rate %></div> </li>
+  <li class="name-list"><div class="name-list"> <%= link_to("Usuń", game_path(f),method: :delete) %> </div></li>
+  <li class="name-list"><div class="name-list"> <%= link_to("Wyświetl", game_path(f)) %></div> </li>
+  <li class="name-list"><div class="name-list"> <%= link_to("Edytuj", edit_game_path(f)) %></div> </li>
+  <li class="name-list"><div class="name-list"><button type="button" onclick="loadDoc()" >Wysiwetl</button></div></li>
+  <br>
 </ul>
-<!-- <div id="present">
-</div> -->
 <%end%>
 </body>

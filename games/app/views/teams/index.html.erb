@@ -1,50 +1,39 @@
 <body class="teams">
-  <script>
-  var number =0;
-  function loadDoc(button,val,war) {
-     if (button.className==''){
-       button.className=number;
-       number=number+1;
-     }
-    var i =button.className;
-    var ele=document.getElementsByClassName("present");
-    if(ele[i].style.display == 'none'){
-        ele[i].style.display = 'inline';
-      }else{
-      ele[i].style.display = 'none';
-    }
-
-  }
-  </script>
-  <div class="test"> </div>
-<ul class='name-list'>
-      <li> Nazwa </li>
-      <li> Miasto </li>
-      <li> Symbol </li>
-      <li> Poziom </li>
+<ul class='title-list' align='center'>
+      <li class='title-ele'> Nazwa </li>
+      <li class='title-ele'> Miasto </li>
+      <li class='title-ele'> Symbol </li>
+      <li class='title-ele'> Poziom </li>
+      <li class="title-ele"> Usun</li>
+      <li class = "title-ele"> Show </li>
+      <li class = "title-ele"> Edit </li>
+      <li class="title-ele"> Members </li>
     </ul>
 <% @all_team.each do |t| %>
-<ul class="name-list">
-  <li> <%= t.name %> </li>
-  <li> <%= t.city %> </li>
-  <li> <%= t.symbol %> </li>
-  <li> <%= t.level %> </li>
-  <li> <%=link_to("Usuń", team_path(t), method: :delete) %> </li>
-  <li> <%= link_to("Wyświetl",team_path(t)) %> </li>
-  <li> <%= link_to("Edytuj",edit_team_path(t)) %> </li>
-  <li><button onclick="loadDoc(this,'test',number)" >Wysiwetl</button></li>
+<ul class="name-list" align="center">
+  <li class="name-list"><div class="name-list"> <%= t.name %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.city %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.symbol %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.level %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%=link_to("Usuń", team_path(t), method: :delete) %> </div></li>
+  <li class="name-list"><div class="name-list">  <%= link_to("Wyświetl",team_path(t)) %></div> </li>
+  <li class="name-list"><div class="name-list">  <%= link_to("Edytuj",edit_team_path(t)) %></div> </li>
+  <li class="name-list"><div class="name-list"> <button onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
     <div class="present">
       <% @all_player.each do |p| %>
       <% if p.team_id == t.id %>
-      <ul class="name-list">
-        <li> <%= p.nickname %> </li>
-        <li> <%= p.name %> </li>
-        <li> <%= p.surname %> </li>
-        <li> <%= p.age %> </li>
+            <br>
+      <ul class="under-ele">
+        <li class="under-ele"><div class="under-ele"> <%= p.nickname %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= p.name %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= p.surname %></div> </li>
+        <li class="under-ele"><div class="under-ele"> <%= p.age %></div>  </li>
       </ul>
+
       <% end %>
       <%end%>
     </div>
+    <br>
 </ul>
 <% end %>
 </ul>

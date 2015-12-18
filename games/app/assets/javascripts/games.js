@@ -1,12 +1,16 @@
-$(document).ready(function(){
-    $('#present').mouseenter(function(){
-        alert("MouseEnter!"); // This will create an alert box
-        console.log("MouseEnter!"); // This will log to the JS console on your browser which is a bit nicer to read than alerts, you do not need both, just preference
-        $(this).fadeIn('fast',1);
-    }
-    $('#present').mouseleave(function(){
-        alert("MouseLeave!"); // This will create an alert box
-        console.log("MouseLeave!");
-        $(this).fadeIn('fast',0.5);
-    }
-});
+
+var number =0;
+function loadDoc(button,val,war) {
+   if (button.className==''){
+     button.className=number;
+     number=number+1;
+   }
+  var i =button.className;
+  var ele=document.getElementsByClassName("present");
+  if(ele[i].style.display == '' || ele[i].style.display == 'none'){ //musi byc or bo na poczatku wartosc najwidoczniej jest ''
+      ele[i].style.display = 'inline';
+    }else{
+    ele[i].style.display = 'none';
+  }
+
+}

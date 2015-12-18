@@ -3,46 +3,144 @@ body{
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+}
+
+/* STYLE DLA LIST WYSWIETLAJACYCH DANE*/
 div.present{
   display: none;
 }
 
-/* PANEL BOCZNY */
+ul.title-list{
+text-align:  center;
+overflow: auto;
+list-style-type: none;
+}
+
+li.title-ele{
+  font: 25px/1 Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  color: #ccc;
+  text-transform: uppercase;
+  border-right: 1px solid #aaa;
+  padding: 0 20px;
+  margin-right: 0;
+  float: left;
+  width: 100px;
+}
+
+li.title-ele:last-child {
+  border-right: none;
+}
+
+ul.under-ele{
+  background-color: red;
+  list-style-type: none;
+  margin-top: 8px;
+}
+
+li.under-ele:last-child {
+  border-right: none;
+}
+
+li.under-ele{
+  font: 20px/1 Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  border-right: 1px solid #aaa;
+  padding: 0 20px;
+  float: left;
+  width: 100px;
+}
+
+div.under-ele{
+  display: block;
+}
+
+ul.name-list{
+  list-style-type: none;
+  text-align: center;
+}
+
+
+li.name-list{
+  font: 18px/1 Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  border-right: 1px solid #aaa;
+  padding: 0 20px;
+  float: left;
+  width: 100px;
+  /*text-align:   center;*/
+  /*width: 30px;*/
+}
+
+li.name-list:last-child {
+  border-right: none;
+}
+
+div.name-list{
+  display: block;
+}
+
+/* PANEL PODRZEDNY*/
 /*wygląd napisu przycisku*/
-a#side-link{
+li a.side-menu{
   text-decoration: none;
   text-transform: uppercase;
   color: white;
   padding: 6px;
   margin: 0;
+  display: block;
+  font: 17px/1 Helvetica, Verdana, sans-serif;
+  margin-left: 10%;
 }
 /*jak ma wyglądac po najechaniu*/
-a:hover#side-link{
+a:hover.side-menu{
   background-color: #36454f;
-  padding: 8.5px;
+  padding: 6px;
 }
 /*tekst ma być obok panelu*/
 /*wyglad panelu za pomoca listy*/
-ul#side-menu{
-  padding: 7px;
+ul.side-menu{
   list-style-type: none;
   background-color: #65737e;
   margin-top: 0;
   margin-bottom:5%;
+  overflow: hidden;
+}
+
+li.side-menu{
+  float: left;
 }
 
 /*MENU NA PASKU */
 /* STYL tekstu */
-a#menu{
+/*pasek z listą elementów menu */
+ul.pasek{
+  /*padding: 11px;*/
+  overflow: hidden;
+  list-style-type: none;
+  background-color: #4f5b66;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li a#menu{
+  font: 17px/1 Helvetica, Verdana, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
   padding: 11px;
   margin: 0;
+  display: block;
 }
 /* wyswietlanie w lini poziomej*/
-li{
-  display: inline;
+li.pasek{
+  float: left;
 }
 /*wygląd po najechaniu */
 body.games a.games:hover#menu{
@@ -74,26 +172,7 @@ body.matches a.matches:hover#menu{
   color: white;
   background-color: #d62d20;
 }
-/*pasek z listą elementów menu */
-ul.pasek{
-  padding: 10px;
-  list-style-type: none;
-  background-color: #4f5b66;
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
-/*TABLICE */
-
-table, tr, td,th{
-  border-style: solid;
-  border-width: 1px;
-  border-collapse: collapse;
-}
-
-tr,td, th{
-  padding: 15px;
-}
 
 /* FORM */
 
@@ -101,7 +180,7 @@ label{
   color: black;
   margin-left: 38%;
 }
-
+/*FORMATKI I PRZYCISKI*/
 .input-style{
   padding: 10px;
   border: solid 1px #fff;
