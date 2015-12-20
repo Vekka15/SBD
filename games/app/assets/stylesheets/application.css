@@ -19,7 +19,7 @@ list-style-type: none;
 }
 
 li.title-ele{
-  font: 25px/1 Helvetica, Verdana, sans-serif;
+  font: 20px/1 Helvetica, Verdana, sans-serif;
   text-decoration: none;
   color: #ccc;
   text-transform: uppercase;
@@ -45,7 +45,7 @@ li.under-ele:last-child {
 }
 
 li.under-ele{
-  font: 20px/1 Helvetica, Verdana, sans-serif;
+  font: 15px/1 Helvetica, Verdana, sans-serif;
   text-decoration: none;
   color: black;
   text-transform: uppercase;
@@ -66,7 +66,7 @@ ul.name-list{
 
 
 li.name-list{
-  font: 18px/1 Helvetica, Verdana, sans-serif;
+  font: 15px/1 Helvetica, Verdana, sans-serif;
   text-decoration: none;
   color: black;
   text-transform: uppercase;
