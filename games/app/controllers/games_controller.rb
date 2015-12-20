@@ -35,7 +35,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    if Match.find_by_game_id(params[:id]) == 0
+    if Match.find_by_game_id(params[:id]) == nil
       Game.delete(params[:id])
       redirect_to games_path
     else
