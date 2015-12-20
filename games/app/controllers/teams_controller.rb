@@ -9,7 +9,6 @@ class TeamsController < ApplicationController
     if @change_team.update_attributes(team_params)
       redirect_to teams_path
     else
-      flash[:alert]="Failed editing"
       render 'edit'
     end
   end
@@ -28,12 +27,10 @@ class TeamsController < ApplicationController
   end
 
   def create
-    new_team = Team.new(team_params)
-    if new_team.save
+    @new_team = Team.new(team_params)
+    if @new_team.save
       redirect_to root_path
     else
-      flash[:alert]="Failed creating"
-      @new_team = Team.new
       render 'new'
     end
   end

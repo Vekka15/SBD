@@ -1,21 +1,18 @@
 <body class="games">
-
-<%=flash[:alert] %>
-<% flash.clear %>
-
 <%= form_for @change_game do |f|%>
+<%if @change_game.errors.any? %>
+<% @change_game.errors.each do |attr,msg|  %>
+<div class="message-box"><%=msg%></div>
+<% end %>
+<%end %>
   <%= f.label "Nazwa" %> <br>
   <%= f.text_field :name , class: "input-style"%>
-<br>
     <%= f.label "Czas:" %> <br>
     <%= f.text_field :time, class: "input-style" %>
-<br>
   <%= f.label "Liczba graczy:" %> <br>
   <%= f.text_field :number_players, class: "input-style" %>
-<br>
   <%= f.label "Ocena:" %><br>
   <%= f.text_field :rate, class: "input-style" %>
-<br>
   <%= f.submit "Accept", class: 'submit-style'%>
 
 <%end%>

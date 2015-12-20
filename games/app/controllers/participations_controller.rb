@@ -38,22 +38,19 @@ class ParticipationsController < ApplicationController
 # niech wybiera z dostepnych za pomoca radio buttona wypisujemy wszystkie rozgrywki jakie sa i gracz sobie wybiera ten interesujacy go
   def create
       numer= params[:participation][:match_id]
-      if params[:participation][:match_id] != ""
+      @new_participation = Participation.new(participation_params)
+      if @new_participation.save
       number_of_players = Participation.count(numer)
       number_of_seats = Match.find(numer).seats_number
       if number_of_players < number_of_seats
-        participation = Participation.new(participation_params)
-        participation.player_id=params[:player_id]
-        participation.save
+        @new_participation = Participation.new(participation_params)
+        @new_participation.save
         redirect_to player_participations_path(Player.find(params[:player_id]))
       else
         @player = Player.find(params[:player_id])
-        flash[:error]="Too many players"
-        redirect_to new_player_participation_path(@player)
+        render 'new'
       end
     else
-      flash[:alert]="Failed creating"
-      @new_participation = Participation.new
       @player = Player.find(params[:player_id])
       render 'new'
   end
@@ -65,6 +62,6 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
-    params.require(:participation).permit(:match_id)
+    params.require(:participation).permit(:player_id,:match_id)
   end
 end

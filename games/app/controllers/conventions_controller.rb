@@ -28,12 +28,10 @@ class ConventionsController < ApplicationController
   end
 
   def create
-      convention = Convention.new(convention_params)
-    if convention.save
+      @convention = Convention.new(convention_params)
+    if @convention.save
       redirect_to conventions_path
     else
-      flash[:alert]="Popełniony jest błąd"
-      @convention = Convention.new
       render 'new'
     end
   end

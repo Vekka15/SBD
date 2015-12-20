@@ -1,12 +1,10 @@
 <body class="participations">
-
-<%= flash[:alert] %>
-<% flash.clear %>
-
 <%= form_for [@player,@change_participation] do |p| %>
+<%if @change_participation.errors.any? %>
+<% @change_participation.errors.each do |attr,msg|  %>
+<div class="message-box"><%=msg%></div>
   <%= p.label "Wybierz gre:" %><br>
   <%= p.text_field :match_id, class: "input-style" %>
-<br>
   <%= p.submit "Accept", class: 'submit-style' %>
 
 

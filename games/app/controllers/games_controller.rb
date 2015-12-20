@@ -9,7 +9,6 @@ class GamesController < ApplicationController
     if @change_game.update_attributes(game_params)
       redirect_to games_path
     else
-      flash[:alert]="Pusta rubryka"
       render 'edit'
     end
   end
@@ -27,12 +26,10 @@ class GamesController < ApplicationController
   end
 
   def create
-    new_game = Game.new(game_params)
-    if  new_game.save
+    @new_game = Game.new(game_params)
+    if  @new_game.save
       redirect_to root_path
     else
-      flash[:alert]="Pusta rubryka"
-      @new_game = Game.new
       render 'new'
     end
   end

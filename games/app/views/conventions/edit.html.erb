@@ -1,23 +1,20 @@
 <body class="conventions">
-
-<%= flash.now[:alert] %>
-<% flash.clear %>
 <%= form_for(@change_convention) do |c| %>
+<%if @convention.errors.any? %>
+<% @convention.errors.each do |attr,msg|  %>
+<div class="message-box"><%=msg%></div>
+<% end %>
+<%end %>
   <%= c.label "Nazwa" %><br>
   <%= c.text_field :name, class: "input-style" %>
-  <br>
   <%= c.label "Start" %><br>
   <%= c.text_field :start, class: "input-style" %>
-  <br>
   <%= c.label "Koniec" %><br>
   <%=c.text_field :end, class: "input-style" %>
-  <br>
   <%= c.label "Kraj" %><br>
   <%= c.text_field :country, class: "input-style" %>
-  <br>
   <%= c.label "Poziom" %><br>
   <%= c.text_field :level, class: "input-style" %>
-  <br>
   <%= c.submit "Accept", class: 'submit-style' %>
 <%end%>
 </body>

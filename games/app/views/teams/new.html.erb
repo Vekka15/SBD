@@ -1,21 +1,18 @@
 <body class="teams">
-
-<%= flash[:alert] %>
-<% flash.clear %>
-
 <%= form_for @new_team do |f|%>
+<%if @new_team.errors.any? %>
+<% @new_team.errors.each do |attr,msg|  %>
+<div class="message-box"><%=msg%></div>
+<% end %>
+<%end %>
   <%= f.label "Nazwa" %> <br>
   <%= f.text_field :name, class: "input-style" %>
-<br>
   <%= f.label "Miasto"%><br>
   <%= f.text_field :city, class: "input-style" %>
-<br>
   <%= f.label "Symbol"%><br>
   <%= f.text_field :symbol, class: "input-style"%>
-<br>
   <%= f.label "Poziom"%><br>
   <%= f.text_field :level, class: "input-style"%>
-<br>
   <%= f.submit "Accept", class: 'submit-style'%>
 
   <!-- , style: "margin-left: 44% border: 1px" -->

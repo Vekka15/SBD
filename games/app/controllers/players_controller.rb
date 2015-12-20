@@ -10,7 +10,6 @@ class PlayersController < ApplicationController
     if @change_player.update_attributes(player_params)
       redirect_to players_path
     else
-      flash[:alert]="Failed editing"
       render 'edit'
     end
   end
@@ -28,12 +27,10 @@ class PlayersController < ApplicationController
   end
 
   def create
-    new_player= Player.new(player_params)
-      if new_player.save
+    @new_player= Player.new(player_params)
+      if @new_player.save
         redirect_to players_path
       else
-        flash[:alert]="Failed creating"
-        @new_player=Player.new
         render 'new'
       end
   end

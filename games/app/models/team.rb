@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   has_many :player
-  validates :name, presence: true
-  validates :city, presence: true
-  validates :symbol, presence: true
-  validates :level, presence: true
+  validates_presence_of :name, :message => "Nazwa jest wymagana"
+  validates_presence_of :city, :message => "Miasto jest wymagane"
+  validates_presence_of :symbol, :message => "Symbol jest wymagany"
+  validates_presence_of :level, :message => "Poziom jest wymagany"
 end

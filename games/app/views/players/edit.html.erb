@@ -1,24 +1,20 @@
 <body class="player">
-
-<%= flash[:alert] %>
-<% flash.clear %>
-
 <%= form_for @change_player do |f|%>
+<%if @change_player.errors.any? %>
+<% @change_player.errors.each do |attr,msg|  %>
+<div class="message-box"><%=msg%></div>
+<% end %>
+<%end %>
   <%= f.label "Nick:" %><br>
   <%= f.text_field :nickname, class: "input-style" %>
-<br>
   <%= f.label "Imię:" %><br>
   <%= f.text_field :name, class: "input-style" %>
-<br>
   <%= f.label "Nazwisko:" %><br>
   <%= f.text_field :surname, class: "input-style" %>
-<br>
   <%= f.label "Wiek:" %><br>
   <%= f.text_field :age, class: "input-style" %>
-<br>
   <%= f.label "Nazwa drużyny:" %><br>
-  <%= f.collection_select :team_id,Team.all,:id, :name, prompt: true, class: "select-tab" %>
-<br>
+  <%= f.collection_select :team_id,Team.all,:id, :name,{ prompt: "Wybierz"},{ class: "select-tab"} %>
 
   <%= f.submit "Accept", class: 'submit-style' %>
 

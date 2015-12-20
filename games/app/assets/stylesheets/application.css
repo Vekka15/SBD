@@ -179,6 +179,9 @@ body.matches a.matches:hover#menu{
 label{
   color: black;
   margin-left: 38%;
+  margin-right: 60%;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 /*FORMATKI I PRZYCISKI*/
 .input-style{
@@ -223,4 +226,16 @@ label{
 
 .select-tab:focus{
   border-color: red;
+}
+
+.message-box{
+  border-radius: 5px;
+  margin-left: 37%;
+  margin-right: 40%;
+  margin-bottom: 5px;
+  margin-top: 0;
+  color: red;
+  padding: 5px;
+  border: 1px solid red;
+  text-align: center;
 }
