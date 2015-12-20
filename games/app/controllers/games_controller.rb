@@ -35,8 +35,14 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    Game.delete(params[:id])
-    rediredt_to games_path
+    if Match.find_by_game_id(params[:id]) == 0
+      Game.delete(params[:id])
+      redirect_to games_path
+    else
+      @all_games = Game.all
+      flash[:error]="Z tej gry korzystają jakieś rozgrywki."
+      render 'index'
+    end
   end
 
   def game_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
