@@ -1,13 +1,13 @@
 class Convention < ActiveRecord::Base
   #presence
   validates_presence_of :name, :message => "Nazwa jest wymagana", :allow_nil => true
-  validates_presence_of :start, :message => "Czas startu jest wymagany", :allow_nil => true
-  validates_presence_of :end, :message => "Czas zakończenia jest wymagany", :allow_nil => true
+  validates_presence_of :start, :message => "Czas startu jest wymagany"
+  validates_presence_of :end, :message => "Czas zakończenia jest wymagany"
   validates_presence_of :country,:message => "Kraj jest wymagany", :allow_nil => true
-  validates_presence_of :level, :message => "Poziom jest wymagany", :allow_nil => true
+  validates_presence_of :level, :message => "Poziom jest wymagany"
 
   #format
-  validates_format_of :name, with: /\p{Alpha}/, :message => "Nazwa powinna zawierać litery", :allow_blank => true
+  validates_format_of :name, with: /\p{Alpha}/, :message => "Nazwa musi zawierać litery", :allow_blank => true
   validates_date :start, :invalid_date_message => "Start musi być datą", :allow_blank => true
   validates_date :end,:after => :start,:after_message => "Koniec musi być później niż start",:invalid_date_message => "Koniec jest niepoprawne",:allow_blank =>true
   validates_numericality_of :level,:less_than => 10, :message => "Poziom musi być mniejszy niż 10", :allow_blank => true
