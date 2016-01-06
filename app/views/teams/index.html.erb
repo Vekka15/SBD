@@ -18,10 +18,11 @@
   <li class="name-list"> <div class="name-list"> <%=link_to("Usuń", team_path(t), method: :delete) %> </div></li>
   <li class="name-list"><div class="name-list">  <%= link_to("Wyświetl",team_path(t)) %></div> </li>
   <li class="name-list"><div class="name-list">  <%= link_to("Edytuj",edit_team_path(t)) %></div> </li>
-  <li class="name-list"><div class="name-list"> <button onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
+  <li class="name-list"><div class="name-list"> <button class="button" onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
     <div class="present">
       <% @all_player.each do |p| %>
       <% if p.team_id == t.id %>
+            <br>
             <br>
       <ul class="under-ele">
         <li class="under-ele"><div class="under-ele"> <%= p.nickname %></div> </li>
@@ -33,6 +34,7 @@
       <% end %>
       <%end%>
     </div>
+    <br>
     <br>
 </ul>
 <% end %>

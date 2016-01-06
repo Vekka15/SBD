@@ -49,8 +49,10 @@ li.under-ele{
   text-decoration: none;
   color: black;
   text-transform: uppercase;
-  border-right: 1px solid #aaa;
+  border-top: 1px solid #aaa;
   padding: 0 20px;
+  padding-top: 10px;
+  margin-top: 5px;
   float: left;
   width: 100px;
 }
@@ -70,8 +72,12 @@ li.name-list{
   text-decoration: none;
   color: black;
   text-transform: uppercase;
-  border-right: 1px solid #aaa;
+  /*border-right: 1px solid #aaa;*/
+  border-top: 1px solid #aaa;
+  height: 20px;
   padding: 0 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   float: left;
   width: 100px;
   /*text-align:   center;*/
