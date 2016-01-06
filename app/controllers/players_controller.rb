@@ -40,6 +40,10 @@ class PlayersController < ApplicationController
     redirect_to players_path
   end
 
+  def search
+    @player = Player.where("nickname ~* ?", "#{params[:text]}[a-b]*")
+  end
+
   def player_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
     params.require(:player).permit(:nickname,:name,:surname,:age,:team_id)
   end

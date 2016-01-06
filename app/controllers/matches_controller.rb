@@ -45,6 +45,10 @@ class MatchesController < ApplicationController
     redirect_to matches_path
   end
 
+  def search
+    @match = Match.where("name ~* ?", "#{params[:text]}[a-b]*")
+  end
+
   def match_params
     params.require(:match).permit(:time,:seats_number,:price,:game_id,:convention_id)
   end

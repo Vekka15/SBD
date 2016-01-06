@@ -1,0 +1,21 @@
+<body class="match">
+<p1> Wyszukiwanie: </p1>
+<table align='center'>
+<tr>
+  <th>Czas</th>
+  <th>Liczba miejsc</th>
+  <th>Nagroda</th>
+  <th>Gra</th>
+  <th>Zjazd</th>
+</tr>
+<% @match.each do |m| %>
+<tr>
+  <td><%= m.time %></td>
+  <td><%= m.seats_number %></td>
+  <td><%= m.price %></td>
+  <td><%= m.game_id %> </td>
+  <td><%= m.convention_id %> </td>
+</tr>
+<%end%>
+</table>
+</body>

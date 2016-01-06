@@ -1,0 +1,19 @@
+<body class="game">
+<p1> Wyszukiwanie: </p1>
+<table align='center'>
+<tr>
+  <th>Nazwa</th>
+  <th>Liczba graczy</th>
+  <th>Czas</th>
+  <th>Ocena</th>
+</tr>
+<% @game.each do |g| %>
+<tr>
+  <td><%= g.name %></td>
+  <td><%= g.number_players %></td>
+  <td><%= g.time %></td>
+  <td><%= g.rate %> </td>
+</tr>
+<%end%>
+</table>
+</body>

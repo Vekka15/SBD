@@ -40,6 +40,10 @@ class TeamsController < ApplicationController
     redirect_to teams_path
   end
 
+  def search
+    @team = Team.where("name ~* ?", "#{params[:text]}[a-b]*")
+  end
+
   def team_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
     params.require(:team).permit(:name,:city,:symbol,:level)
   end

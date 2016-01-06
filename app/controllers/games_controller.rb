@@ -45,6 +45,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def search
+    @game = Game.where("name ~* ?", "#{params[:text]}[a-b]*")
+  end
+
   def game_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami
     params.require(:game).permit(:name,:time,:number_players,:rate)
   end

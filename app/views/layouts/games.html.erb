@@ -11,6 +11,10 @@
 </ul>
 <ul class="side-menu">
 <li class="side-menu"><%= link_to("Nowe",new_game_path,class: "side-menu") %></li>
+<%= form_tag({:controller => 'games',:action => 'search'},:method => 'get') do%>
+  <li style="float: right"><%= submit_tag "Search", class: "search-button" %></li>
+  <li style="float: right"><%= text_field_tag "text",nil,class: "search-input-style"%></li>
+<%end%>
 </ul>
 <%= yield %>
 </body>

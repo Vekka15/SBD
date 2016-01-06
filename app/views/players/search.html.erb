@@ -1,0 +1,21 @@
+<body class="player">
+<p1> Wyszukiwanie: </p1>
+<table align='center'>
+<tr>
+  <th>Nick</th>
+  <th>Imie</th>
+  <th>Nazwisko</th>
+  <th>Wiek</th>
+  <th>Drużyna</th>
+</tr>
+<% @player.each do |p| %>
+<tr>
+  <td><%= p.nickname %></td>
+  <td><%= p.name %></td>
+  <td><%= p.surname %></td>
+  <td><%= p.age %> </td>
+  <td><%= Team.find_by_id(p.team_id).name %> </td>
+</tr>
+<%end%>
+</table>
+</body>

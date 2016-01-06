@@ -1,0 +1,19 @@
+<body class="team">
+<p1> Wyszukiwanie: </p1>
+<table align='center'>
+<tr>
+  <th>Nazwa</th>
+  <th>Miasto</th>
+  <th>Symbol</th>
+  <th>Poziom</th>
+</tr>
+<% @team.each do |t| %>
+<tr>
+  <td><%= t.name %></td>
+  <td><%= t.city %></td>
+  <td><%= t.symbol %></td>
+  <td><%= t.level %> </td>
+</tr>
+<%end%>
+</table>
+</body>
