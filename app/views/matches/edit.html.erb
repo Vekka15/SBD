@@ -1,8 +1,8 @@
 <body class="matches">
 
 <%= form_for @change_match do |m| %>
-<%if @match.errors.any? %>
-<% @match.errors.each do |attr,msg|  %>
+<%if @change_match.errors.any? %>
+<% @change_match.errors.each do |attr,msg|  %>
 <div class="message-box"><%=msg%></div>
 <% end %>
 <%end %>
@@ -13,10 +13,10 @@
   <%= m.text_field :seats_number, class: "input-style" %>
   <%= m.label "Nagroda" %><br>
   <%= m.text_field :price, class: "input-style" %>
-  <%= m.label "Nazwa gry" %><br>
-  <%= m.text_field :game_name, class: "input-style" %>
-  <%= m.label "Nazwa zjazdu" %><br>
-  <%= m.text_field :convention_name, class: "input-style" %>
+  <%= m.label "Gra" %><br>
+  <%= m.collection_select :game_id, Game.all, :id, :name, {prompt: "Wybierz"},{ class: "select-tab"} %>
+  <%= m.label "Zjazd" %><br>
+  <%= m.collection_select :convention_id, Convention.all, :id, :name, {prompt: "Wybierz"}, {class: "select-tab"}  %>
 
   <%= m.submit "Accept", class: 'submit-style'%>
 

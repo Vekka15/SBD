@@ -13,7 +13,6 @@ class ParticipationsController < ApplicationController
     if  @change_participation.update_attributes(participation_params)
       redirect_to participations_path
     else
-      flash[:alert]="Failed editing"
       render 'edit'
     end
   end
@@ -33,11 +32,10 @@ class ParticipationsController < ApplicationController
 
   def new
     @new_participation = Participation.new
-    @player = Player.find(params[:player_id])
   end
 # niech wybiera z dostepnych za pomoca radio buttona wypisujemy wszystkie rozgrywki jakie sa i gracz sobie wybiera ten interesujacy go
   def create
-      numer= params[:participation][:match_id]
+      #numer= params[:participation][:match_id]
       @new_participation = Participation.new(participation_params)
       if @new_participation.save
       number_of_players = Participation.count(numer)
@@ -45,13 +43,13 @@ class ParticipationsController < ApplicationController
       if number_of_players < number_of_seats
         @new_participation = Participation.new(participation_params)
         @new_participation.save
-        redirect_to player_participations_path(Player.find(params[:player_id]))
+        redirect_to participations_path
       else
-        @player = Player.find(params[:player_id])
+        #@player = Player.find(params[:player_id])
         render 'new'
       end
     else
-      @player = Player.find(params[:player_id])
+      #@player = Player.find(params[:player_id])
       render 'new'
   end
   end

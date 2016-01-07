@@ -1,7 +1,7 @@
 <body class="conventions">
 <%= form_for(@change_convention) do |c| %>
-<%if @convention.errors.any? %>
-<% @convention.errors.each do |attr,msg|  %>
+<%if @change_convention.errors.any? %>
+<% @change_convention.errors.each do |attr,msg|  %>
 <div class="message-box"><%=msg%></div>
 <% end %>
 <%end %>

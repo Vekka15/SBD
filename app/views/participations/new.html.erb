@@ -1,16 +1,16 @@
 <body class="participations">
-<%= form_for [@player,@new_participation] do |p| %>
+<%= form_for @new_participation do |p| %>
 <%if @new_participation.errors.any? %>
 <% @new_participation.errors.each do |attr,msg|  %>
 <div class="message-box"><%=msg%></div>
 <br>
 <% end %>
 <%end %>
+  <%= p.label "Wybierz gracza" %><br>
+  <%= p.collection_select :player_id, Player.all, :id, :nickname, {prompt: "Wybierz"}, {class: "select-tab"}%>
   <%= p.label "Wybierz gre:" %> <br>
   <%= p.collection_select :match_id, Match.all, :id, :id, {prompt: "Wybierz"}, {class: "select-tab"} %>
   <%= p.submit "Accept", class: 'submit-style'%>
-
-
 <%end%>
   <%= debug(params) %>
 </body>

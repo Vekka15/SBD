@@ -2,8 +2,6 @@ class MatchesController < ApplicationController
 
   def edit
     @change_match = Match.find(params[:id])
-    @change_match.game_name = Game.find(@change_match.game_id).name
-    @change_match.convention_name = Convention.find(@change_match.convention_id).name
   end
 
   def update

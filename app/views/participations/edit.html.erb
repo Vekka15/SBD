@@ -1,13 +1,15 @@
 <body class="participations">
-<%= form_for [@player,@change_participation] do |p| %>
+<%= form_for @change_participation do |p| %>
 <%if @change_participation.errors.any? %>
 <% @change_participation.errors.each do |attr,msg|  %>
 <div class="message-box"><%=msg%></div>
+<%end%>
+<%end%>
+  <%= p.label "Wybierz gracza" %> <br>
+  <%= p.collection_select :player_id, Player.all, :id, :nickname, {prompt: Player.find_by_id(:player_id)}, {class: "select-tab"}%>
   <%= p.label "Wybierz gre:" %><br>
-  <%= p.text_field :match_id, class: "input-style" %>
+  <%= p.collection_select :match_id, Match.all, :id, :id, {prompt: :match_id}, {class: "select-tab"} %>
   <%= p.submit "Accept", class: 'submit-style' %>
-
-
 <%end%>
   <%= debug(params) %>
 </body>

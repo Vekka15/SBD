@@ -9,6 +9,13 @@
   <ul class="pasek">
 <li class="pasek"><%=link_to("Gracze",players_path,id: "menu",class: "player") %></li><li class="pasek"><%=link_to("Drużyny",teams_path,id: "menu",class: "teams") %></li><li class="pasek"><%=link_to("Zjazdy",conventions_path,id: "menu",class: "conventions") %></li><li class="pasek"><%=link_to("Gry",games_path,id: "menu",class: "games") %></li><li class="pasek"><%=link_to("Rozgrywki",matches_path,id: "menu",class: "matches") %></li><li class="pasek"><%= link_to("Uczestnictwa", participations_path, id: "menu", class: "participation") %> </li>
 </ul>
+<ul class="side-menu">
+  <li class="side-menu"><%=link_to("Nowe",new_participation_path,class: "side-menu") %></li>
+  <%= form_tag({:controller => 'participations',:action => 'search'},:method => 'get') do%>
+    <li style="float: right"><%= submit_tag "Search", class: "search-button" %></li>
+    <li style="float: right"><%= text_field_tag "text", nil, class: "search-input-style" %></li>
+  <%end%>
+</ul>
 <%= yield %>
 </body>
 </html>

@@ -6,13 +6,11 @@ class ConventionsController < ApplicationController
 
   def update
     @change_convention = Convention.find(params[:id])
-  if  @change_convention.update_attributes(convention_params)
-    redirect_to conventions_path
-  else
-    flash[:alert]="Pusty element"
-    document.alert("pusty element")
-    render 'edit'
-  end
+    if  @change_convention.update_attributes(convention_params)
+      redirect_to conventions_path
+    else
+      render 'edit'
+    end
   end
 
   def show
