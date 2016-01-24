@@ -1,6 +1,7 @@
 class Player < ActiveRecord::Base
   belongs_to :team
   has_many :participation
+  before_destroy :check_for_participations
 
   #presence
   validates_presence_of :nickname, :message => "Nick jest wymagany", :allow_nil => true
@@ -23,4 +24,11 @@ class Player < ActiveRecord::Base
   validates_length_of :name, :maximum => 15, :message => "Imię jest za długie", :allow_blank => true
   validates_length_of :surname, :maximum => 15, :message => "Nazwisko jest za długie", :allow_blank =>true
 
+  private
+
+  def check_for_participations
+    if participation.any?
+      return false
+    end
+  end
 end

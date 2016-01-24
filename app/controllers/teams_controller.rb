@@ -36,8 +36,12 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    Team.delete(params[:id])
-    redirect_to teams_path
+    if Team.destroy(params[:id])
+      redirect_to teams_path
+    else
+      flash[:error] = "Nie można usunąć - do drużyny należą gracze"
+      redirect_to teams_path
+    end
   end
 
   def search

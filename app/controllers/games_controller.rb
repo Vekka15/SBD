@@ -35,13 +35,12 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    if Match.find_by_game_id(params[:id]) == nil
-      Game.delete(params[:id])
+    #if Match.find_by_game_id(params[:id]) == nil - tak tez mozna sprawdzac klucz obcy
+    if  Game.destroy(params[:id])
       redirect_to games_path
     else
-      @all_games = Game.all
-      flash[:error]="Z tej gry korzystają jakieś rozgrywki."
-      render 'index'
+      flash[:error]="Nie można usunąć - z tej gry korzystają rozgrywki"
+      redirect_to games_path
     end
   end
 

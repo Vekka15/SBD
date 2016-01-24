@@ -2,6 +2,7 @@ class Match < ActiveRecord::Base
   belongs_to :game
   belongs_to :convention
   has_many :participation
+  before_destroy :check_for_participations
 
   #presence
   validates_presence_of :time, :message => "Czas jest wymagany"
@@ -16,5 +17,12 @@ class Match < ActiveRecord::Base
   validates_numericality_of :seats_number, :less_than => 10, :message => "Liczba miejsc taka jak gry", :allow_blank => true #do pr
   validates_numericality_of :price, :integer_only => true, :message => "Cena musi być liczbą", :allow_blank => true
 
+  private
+
+  def check_for_participations
+    if participation.any?
+      return false
+    end
+  end
 
 end

@@ -1,4 +1,6 @@
 class Convention < ActiveRecord::Base
+  has_many :match
+  before_destroy :check_for_matches
   #presence
   validates_presence_of :name, :message => "Nazwa jest wymagana", :allow_nil => true
   validates_presence_of :start, :message => "Czas startu jest wymagany"
@@ -20,5 +22,13 @@ class Convention < ActiveRecord::Base
 
   #unikalność
   validates_uniqueness_of :name, :message => "Nazwa już istnieje"
+
+  private
+
+  def check_for_matches
+    if match.any?
+      return false
+    end
+  end
 
 end

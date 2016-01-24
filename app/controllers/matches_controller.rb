@@ -39,8 +39,12 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    Match.delete(params[:id])
-    redirect_to matches_path
+    if Match.destroy(params[:id])
+      redirect_to matches_path
+    else
+      flash[:error] = "Nie można usunąć - w rozgrywce biorą udział gracze"
+      redirect_to matches_path
+    end
   end
 
   def search

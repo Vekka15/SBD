@@ -35,8 +35,12 @@ class ConventionsController < ApplicationController
   end
 
   def destroy
-    Convention.delete(params[:id])
-    redirect_to conventions_path
+    if Convention.destroy(params[:id])
+      redirect_to conventions_path
+    else
+      flash[:error]="Nie można usunąć - do konwentu należą mecze"
+      redirect_to conventions_path
+    end
   end
 
   def search

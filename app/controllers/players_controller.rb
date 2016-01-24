@@ -19,6 +19,7 @@ class PlayersController < ApplicationController
 
   def index
     @all_player = Player.all
+
   end
 
   def new
@@ -35,8 +36,12 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-    Player.delete(params[:id])
-    redirect_to players_path
+    if Player.destroy(params[:id])
+      redirect_to players_path
+    else
+      flash[:error] = "Nie można usunąć - gracz bierze udział w rozgrywce"
+      redirect_to players_path
+    end
   end
 
   def search

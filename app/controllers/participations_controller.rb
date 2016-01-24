@@ -55,8 +55,12 @@ class ParticipationsController < ApplicationController
   end
 
   def destroy
-    Participation.delete(params[:id])
-    redirect_to root_path
+    if Participation.destroy(params[:id])
+      redirect_to matches_path
+    else
+      flash[:error] = "Nie można usunąć - w rozgrywce biorą udział gracze"
+      redirect_to matches_path
+    end
   end
 
   def participation_params

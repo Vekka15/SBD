@@ -1,5 +1,6 @@
 class Game < ActiveRecord::Base
   has_many :match
+  before_destroy :check_for_matches
 
   #presence
   validates_presence_of :name, :message => "Nazwa jest wymagana", :allow_nil => true
@@ -20,5 +21,13 @@ class Game < ActiveRecord::Base
 
   #długość
   validates_length_of :name, :maximum => 15, :message => "Nazwa jest za długa"
+
+  private
+
+  def check_for_matches
+    if match.any?
+      return false
+    end
+  end
 
 end

@@ -1,5 +1,6 @@
 class Team < ActiveRecord::Base
-  has_many :player
+  has_many :player, :dependent => :destroy
+  before_destroy :check_for_players, prepend: true #to jest sprawdzanie przed metoda .destroy nie def destroy
 
   #presence
   validates_presence_of :name, :message => "Nazwa jest wymagana", :allow_nil => true
@@ -19,5 +20,17 @@ class Team < ActiveRecord::Base
   validates_length_of :name, :maximum => 15, :message => "Nazwa jest za długa"
   validates_length_of :city, :maximum => 15, :message => "Miasto jest za długie"
   validates_length_of :symbol, :maximum => 15, :message => "Symbol jest za długi"
+
+  private
+
+  #własny validator
+  def check_for_players
+    if player.any?
+      errors[:base] << "cannot delete submission that has already been paid"
+      return false
+    end
+  end
+
+
 
 end

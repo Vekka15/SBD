@@ -1,4 +1,9 @@
 <body class="conventions">
+
+  <% if flash[:error] %>
+    <div class="message-box"><%= flash[:error] %></div>
+  <%end%>
+
   <ul class="title-list">
     <li class="title-ele">Nazwa</li>
     <li class="title-ele">Start</li>

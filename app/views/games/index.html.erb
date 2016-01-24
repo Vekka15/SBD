@@ -1,10 +1,8 @@
 <body class="games">
+
 <% if flash[:error] %>
-  <script>
-  alert("Usuwany rekord ma dzieci");
-    </script>
-  <% flash.clear %>
-<%end %>
+  <div class="message-box"><%=flash[:error] %></div>
+<%end%>
 <ul class='title-list'>
     <li class="title-ele">Nazwa</li>
     <li class="title-ele">Liczba graczy</li>
