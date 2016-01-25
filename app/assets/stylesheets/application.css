@@ -284,3 +284,14 @@ label{
   border: 1px solid red;
   text-align: center;
 }
+
+ul.stat-box{
+  list-style-type: none;
+  font: 19px/1 Helvetica, Verdana, sans-serif;
+   display: inline-block;
+   margin-left: 10%;
+}
+
+li.stat-box{
+  margin: 2px;
+}

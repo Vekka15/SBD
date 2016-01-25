@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'participations/search', to: 'participations#search'
   get 'players/search', to: 'players#search'
   get 'teams/search', to: 'teams#search'
+  
   resources :pages, :only=>:show
   resources :games
   resources :teams
