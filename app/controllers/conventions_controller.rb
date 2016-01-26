@@ -19,6 +19,7 @@ class ConventionsController < ApplicationController
 
   def index
     @all_conventions = Convention.all
+    @all_matches = Match.all
   end
 
   def new
@@ -45,6 +46,7 @@ class ConventionsController < ApplicationController
 
   def search
     @convention = Convention.where("name ~* ?", "#{params[:text]}[a-b]*")
+    @all_matches= Match.all
   end
 
   def convention_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

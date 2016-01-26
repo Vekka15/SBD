@@ -10,6 +10,10 @@
     <li class="title-ele">Koniec</li>
     <li class="title-ele">Kraj</li>
     <li class="title-ele">Poziom</li>
+    <li class="title-ele">Usuń</li>
+    <li class="title-ele">Wyświetl</li>
+    <li class="title-ele">Edytuj</li>
+    <li class="title-ele">Rozgrywki</li>
   </ul>
 <% @all_conventions.each do |c| %>
 <ul class="name-list">
@@ -21,9 +25,25 @@
   <li class="name-list"><%= link_to("Usuń", convention_path(c),method: :delete) %> </li>
   <li class="name-list"><%= link_to("Wyświetl", convention_path(c)) %> </li>
   <li class="name-list"><%=link_to("Edytuj",edit_convention_path(c)) %> </li>
+  <li class="name-list"><div class="name-list"> <button class="button" onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
+    <div class="present">
+      <% @all_matches.each do |m| %>
+      <% if m.convention_id == c.id %>
+            <br>
+            <br>
+      <ul class="under-ele">
+        <li class="under-ele"><div class="under-ele"> <%= m.time %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= m.seats_number %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= m.price %></div> </li>
+        <li class="under-ele"><div class="under-ele"> <%= Game.find_by_id(m.game_id).name %></div>  </li>
+      </ul>
+
+      <% end %>
+      <%end%>
+    </div>
+    <br>
+    <br>
 </ul>
-<br>
-<br>
 <%end%>
 </table>
 </body>

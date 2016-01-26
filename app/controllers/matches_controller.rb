@@ -48,7 +48,11 @@ class MatchesController < ApplicationController
   end
 
   def search
-    @match = Match.where("name ~* ?", "#{params[:text]}[a-b]*")
+    @game = Game.where("name ~* ?", "#{params[:text]}[a-b]*")
+    @game.each do |g|
+     @match = Match.where(game_id: g.id)
+     break
+    end
   end
 
   def match_params

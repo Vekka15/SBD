@@ -19,7 +19,7 @@ class PlayersController < ApplicationController
 
   def index
     @all_player = Player.all
-
+    @all_participations = Participation.all
   end
 
   def new
@@ -46,6 +46,7 @@ class PlayersController < ApplicationController
 
   def search
     @player = Player.where("nickname ~* ?", "#{params[:text]}[a-b]*")
+    @all_participations = Participation.all
   end
 
   def player_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

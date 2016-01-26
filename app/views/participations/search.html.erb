@@ -1,0 +1,16 @@
+<body class="participations">
+  <ul class="title-list">
+    <li class="title-ele"> Gracz </li>
+    <li class="title-ele" > Match </li>
+    <li class="title-ele" style="width: 220px"> Create </li>
+  </ul>
+  <% @participation.each do |p| %>
+  <ul class="name-list">
+    <li class="name-list"><div class="name-list"><%= Player.find(p.player_id).nickname %></div> </li>
+    <li class="name-list"><div class="name-list"><%= p.match_id %></div></div> </li>
+    <li class="name-list" style="width: 220px"><div class="name-list" style="width: 220px"><%= p.created_at %></div> </li>
+    <br>
+    <br>
+  </ul>
+    <%end%>
+</body>

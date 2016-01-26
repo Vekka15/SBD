@@ -11,19 +11,6 @@
     <li class="title-ele"> Edit </li>
   </ul>
   <% if @player!=nil %>
-<!-- # <% @all_participation.each do |p| %>
-# <ul class="name-list"
-#   <% if @player.id == p.player_id %>
-#   <li class="name-list"><div class="name-list"><%= Player.find(p.player_id).nickname %></div> </li>
-#   <li class="name-list"><div class="name-list"><%= p.match_id %></div> </li>
-#   <li class="name-list" style="width: 220px"><div class="name-list" style="width: 220px"><%= p.created_at %></div> </li>
-#   <li class="name-list"><div class="name-list"><%=link_to("Usuń", player_participation_path(@player,p), method: :delete) %></div> </li>
-#   <li class="name-list"><div class="name-list"><%=link_to("Wyświetl",player_participation_path(@player,p)) %></div> </li>
-#   <li class="name-list"><div class="name-list"><%= link_to("Edytuj", edit_player_participation_path(@player,p)) %></div> </li>
-#   <%end%>
-#   <br>
-# </ul>
-#   <%end%> -->
   <%else%>
   <% @all_participation.each do |p| %>
   <ul class="name-list">

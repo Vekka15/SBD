@@ -1,19 +1,37 @@
 <body class="team">
-<p1> Wyszukiwanie: </p1>
-<table align='center'>
-<tr>
-  <th>Nazwa</th>
-  <th>Miasto</th>
-  <th>Symbol</th>
-  <th>Poziom</th>
-</tr>
+<center><p1> Wyszukiwanie: </p1></center>
+<ul class='title-list' align='center'>
+      <li class='title-ele'> Nazwa </li>
+      <li class='title-ele'> Miasto </li>
+      <li class='title-ele'> Symbol </li>
+      <li class='title-ele'> Poziom </li>
+      <li class="title-ele"> Members </li>
+    </ul>
 <% @team.each do |t| %>
-<tr>
-  <td><%= t.name %></td>
-  <td><%= t.city %></td>
-  <td><%= t.symbol %></td>
-  <td><%= t.level %> </td>
-</tr>
-<%end%>
-</table>
+<ul class="name-list" align="center">
+  <li class="name-list"><div class="name-list"> <%= t.name %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.city %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.symbol %></div> </li>
+  <li class="name-list"> <div class="name-list"> <%= t.level %></div> </li>
+  <li class="name-list"><div class="name-list"> <button class="button" onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
+    <div class="present">
+      <% @all_player.each do |p| %>
+      <% if p.team_id == t.id %>
+            <br>
+            <br>
+      <ul class="under-ele">
+        <li class="under-ele"><div class="under-ele"> <%= p.nickname %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= p.name %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= p.surname %></div> </li>
+        <li class="under-ele"><div class="under-ele"> <%= p.age %></div>  </li>
+      </ul>
+
+      <% end %>
+      <%end%>
+    </div>
+    <br>
+    <br>
+</ul>
+<% end %>
+</ul>
 </body>

@@ -1,21 +1,25 @@
 <body class="match">
-<p1> Wyszukiwanie: </p1>
-<table align='center'>
-<tr>
-  <th>Czas</th>
-  <th>Liczba miejsc</th>
-  <th>Nagroda</th>
-  <th>Gra</th>
-  <th>Zjazd</th>
-</tr>
+<center><p1> Wyszukiwanie: </p1></center>
+<ul class="title-list">
+  <li class="title-ele"> Czas </li>
+  <li class="title-ele"> Liczba miejsc </li>
+  <li class="title-ele"> Prize </li>
+  <li class="title-ele"> Gra </li>
+  <li class="title-ele"> Zjazd </li>
+</ul>
+
 <% @match.each do |m| %>
-<tr>
-  <td><%= m.time %></td>
-  <td><%= m.seats_number %></td>
-  <td><%= m.price %></td>
-  <td><%= m.game_id %> </td>
-  <td><%= m.convention_id %> </td>
-</tr>
+<ul class="name-list">
+<li class="name-list"><div class="name-list"><%= m.time %></div> </li>
+<li class="name-list"><div class="name-list"><%= m.seats_number %> </div></li>
+<li class="name-list"><div class="name-list"><%= m.price %></div> </li>
+<li class="name-list"><div class="name-list"><%= Game.find(m.game_id).name %></div> </li>
+<li class="name-list"><div class="name-list"><%= Convention.find(m.convention_id).name %></div> </li>
+<li class="name-list"><div class="name-list"><%=link_to("Usuń", match_path(m), method: :delete) %></div> </li>
+<li class="name-list"><div class="name-list"><%=link_to("Wyświetl", match_path(m)) %></div> </li>
+<li class="name-list"><div class="name-list"><%= link_to("Edytuj",edit_match_path(m)) %></div> </li>
+  <br>
+  <br>
+</ul>
 <%end%>
-</table>
 </body>

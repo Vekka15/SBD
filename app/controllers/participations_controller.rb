@@ -63,6 +63,14 @@ class ParticipationsController < ApplicationController
     end
   end
 
+  def search
+    @player = Player.where("nickname ~* ?", "#{params[:text]}[a-b]*")
+    @player.each do |g|
+     @participation = Participation.where(player_id: g.id)
+     break
+    end
+  end
+
   def participation_params
     params.require(:participation).permit(:player_id,:match_id)
   end

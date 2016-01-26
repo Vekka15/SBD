@@ -46,6 +46,7 @@ class TeamsController < ApplicationController
 
   def search
     @team = Team.where("name ~* ?", "#{params[:text]}[a-b]*")
+    @all_player = Player.all
   end
 
   def team_params #umozliwia dostep do atrybutow stosowany do obrony danych przed innymi uzytkownikami

@@ -9,9 +9,10 @@
     <li class="title-ele"> Nazwisko </li>
     <li class="title-ele"> Wiek </li>
     <li class="title-ele"> Team </li>
-    <li class="title-ele"> Delete </li>
-    <li class="title-ele"> Team </li>
-    <li class="title-ele"> Team </li>
+    <li class="title-ele"> Usuń </li>
+    <li class="title-ele"> Wyświetl </li>
+    <li class="title-ele"> Edytuj </li>
+    <li class="title-ele"> Rozgrywki </li>
   </ul>
 <% @all_player.each do |p| %>
 <ul class="name-list">
@@ -23,6 +24,24 @@
   <li class="name-list"> <%= link_to("Usuń", player_path(p),method: :delete) %> </li>
   <li class="name-list">  <%= link_to("Wyświetl", player_path(p)) %> </li>
   <li class="name-list"> <%=link_to("Edytuj",edit_player_path(p)) %> </li>
+  <li class="name-list"><div class="name-list"> <button class="button" onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
+    <div class="present">
+      <% @all_participations.each do |m| %>
+      <% if m.player_id == p.id %>
+            <br>
+            <br>
+      <ul class="under-ele">
+        <li class="under-ele"><div class="under-ele"> <%= Match.find_by_id(m.match_id).time %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= Match.find_by_id(m.match_id).seats_number %></div> </li>
+        <li class="under-ele"> <div class="under-ele"><%= Match.find_by_id(m.match_id).price %></div> </li>
+        <% @mat = Match.find_by_id(m.match_id) %>
+        <li class="under-ele"><div class="under-ele"> <%= Convention.find_by_id(@mat.convention_id).name %></div>  </li>
+        <li class="under-ele"><div class="under-ele"> <%= Convention.find_by_id(@mat.game).name %></div>  </li>
+      </ul>
+
+      <% end %>
+      <%end%>
+    </div>
 </ul>
 <br>
 <br>

@@ -1,23 +1,38 @@
 <body class="conventions">
-<p1> Wyszukiwanie: </p1>
-<table align='center'>
-<tr>
-  <th>Id</th>
-  <th>Nazwa</th>
-  <th>Start</th>
-  <th>Koniec</th>
-  <th>Kraj</th>
-  <th>Poziom</th>
-</tr>
+<center><p1> Wyszukiwanie: </p1></center>
+<ul class="title-list">
+  <li class="title-ele">Nazwa</li>
+  <li class="title-ele">Start</li>
+  <li class="title-ele">Koniec</li>
+  <li class="title-ele">Kraj</li>
+  <li class="title-ele">Poziom</li>
+  <li class="title-ele">Rozgrywki</li>
+</ul>
 <% @convention.each do |c| %>
-<tr>
-  <td><%=c.id %> </td>
-  <td><%= c.name %></td>
-  <td><%= c.start %></td>
-  <td><%= c.end %></td>
-  <td><%= c.country %> </td>
-  <td> <%= c.level %> </td>
-</tr>
+<ul class="name-list">
+<li class="name-list"><%= c.name %> </li>
+<li class="name-list"><%= c.start %> </li>
+<li class="name-list"><%=c.end %> </li>
+<li class="name-list"><%= c.country %> </li>
+<li class="name-list"><%= c.level %> </li>
+<li class="name-list"><div class="name-list"> <button class="button" onclick="loadDoc(this,'test',number)" >Wyswietl</button></div></li>
+  <div class="present">
+    <% @all_matches.each do |m| %>
+    <% if m.convention_id == c.id %>
+          <br>
+          <br>
+    <ul class="under-ele">
+      <li class="under-ele"><div class="under-ele"> <%= m.time %></div> </li>
+      <li class="under-ele"> <div class="under-ele"><%= m.seats_number %></div> </li>
+      <li class="under-ele"> <div class="under-ele"><%= m.price %></div> </li>
+      <li class="under-ele"><div class="under-ele"> <%= Game.find_by_id(m.game_id).name %></div>  </li>
+    </ul>
+
+    <% end %>
+    <%end%>
+  </div>
+  <br>
+  <br>
+</ul>
 <%end%>
-</table>
 </body>

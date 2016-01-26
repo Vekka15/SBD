@@ -8,6 +8,9 @@
     <li class="title-ele">Liczba graczy</li>
     <li class="title-ele">Czas gry</li>
     <li class="title-ele">Ocena </li>
+    <li class="title-ele">Usuń </li>
+    <li class="title-ele">Wyświetl </li>
+    <li class="title-ele">Edycja </li>
   </ul>
 <% @all_games.each do |f| %>
 <ul class="name-list">
@@ -18,7 +21,6 @@
   <li class="name-list"><div class="name-list"> <%= link_to("Usuń", game_path(f),method: :delete) %> </div></li>
   <li class="name-list"><div class="name-list"> <%= link_to("Wyświetl", game_path(f)) %></div> </li>
   <li class="name-list"><div class="name-list"> <%= link_to("Edytuj", edit_game_path(f)) %></div> </li>
-  <li class="name-list"><div class="name-list"><button type="button" onclick="loadDoc()" >Wysiwetl</button></div></li>
   <br>
   <br>
 </ul>
