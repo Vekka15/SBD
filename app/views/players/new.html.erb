@@ -12,12 +12,11 @@
   <%= f.label "Nazwisko:" %><br>
   <%= f.text_field :surname, class: "input-style" %>
   <%= f.label "Wiek:" %><br>
-  <%= f.text_field :age, class: "input-style" %>
+  <%= f.text_field :age, class: "input-style" %><br>
   <%= f.label "Nazwa drużyny:" %><br>
   <%= f.collection_select :team_id,Team.all,:id, :name, {prompt: "Wybierz"}, {class: "select-tab"} %>
 
   <%= f.submit "Accept", class: 'submit-style' %>
 
 <%end%>
-<%= debug(params) %>
 </body>

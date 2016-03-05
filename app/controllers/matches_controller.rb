@@ -50,7 +50,7 @@ class MatchesController < ApplicationController
   def search
     @game = Game.where("name ~* ?", "#{params[:text]}[a-b]*")
     @game.each do |g|
-     @match = Match.where(game_id: g.id)
+     @match = Match.where(game_id: g.id) #zeby zwracalo zbiór rekordów a nie jeden bo w view robimy .each
      break
     end
   end
