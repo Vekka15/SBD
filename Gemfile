@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jc-validates_timeliness', '~> 3.1', '>= 3.1.1'
 gem 'timeliness', '~> 0.3.7'
 
+gem 'rails_12factor', '0.0.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
