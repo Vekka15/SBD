@@ -166,7 +166,7 @@ body.player a.player:link,
 body.conventions a.conventions:link,
 body.teams a.teams:link,
 body.matches a.matches:link,
-body.participations a.participations:link
+body.participations a.participations:link,
 body.page a.page:link{
 	color: white ;
 	background-color: #d62d20;
@@ -176,8 +176,8 @@ body.games a.games:hover#menu,
 body.player a.player:hover#menu,
 body.conventions a.conventions:hover#menu,
 body.teams a.teams:hover#menu,
-body.matches a.matches:hover#menu
-body.participations a.participations:hover#menu
+body.matches a.matches:hover#menu,
+body.participations a.participations:hover#menu,
 body.page a.page:hover#menu{
   color: white;
   background-color: #d62d20;
