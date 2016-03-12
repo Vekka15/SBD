@@ -1,4 +1,5 @@
 <!-- test funkcji plsql -->
+<body class="page">
 <% @stat.each do |t| %>
   <% @stats = t["staty"] %>
   <% @stats[0] = ''%>
@@ -44,3 +45,4 @@
     <li class="stat-box"><div>Najbardziej prestiżowa rozkrywka:  <%=@stats[21] %> na <%= @stats[22]%> </div></li>
   </ul>
 <%end%>
+</body>

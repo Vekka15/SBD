@@ -24,7 +24,7 @@ li.title-ele{
   color: #ccc;
   text-transform: uppercase;
   border-right: 1px solid #aaa;
-  padding: 0 10px;
+  padding: 0 20px;
   margin-right: 0;
   float: left;
   width: 100px;
@@ -166,7 +166,8 @@ body.player a.player:link,
 body.conventions a.conventions:link,
 body.teams a.teams:link,
 body.matches a.matches:link,
-body.participations a.participations:link {
+body.participations a.participations:link
+body.page a.page:link{
 	color: white ;
 	background-color: #d62d20;
 }
@@ -176,7 +177,8 @@ body.player a.player:hover#menu,
 body.conventions a.conventions:hover#menu,
 body.teams a.teams:hover#menu,
 body.matches a.matches:hover#menu
-body.participations a.participations:hover#menu{
+body.participations a.participations:hover#menu
+body.page a.page:hover#menu{
   color: white;
   background-color: #d62d20;
 }
