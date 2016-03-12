@@ -1,6 +1,7 @@
 <!-- test funkcji plsql -->
 <% @stat.each do |t| %>
   <% @stats = t["staty"] %>
+  <div> <%= t["staty"] %></div>
   <% @stats[0] = ''%>
   <% @stats[@stats.length-1]='' %>
   <% @stats = @stats.to_s.split(",") %>
